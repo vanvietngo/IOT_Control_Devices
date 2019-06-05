@@ -17,7 +17,9 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 //------------------------------------------------------------------------
-
+router.get('/googlef973672c25ad254a', function(req, res, next) {
+  res.render('googlef973672c25ad254a');
+});
 
 router.get('/home', function(req, res, next) {
   res.render('home');
