@@ -7,7 +7,7 @@ module.exports = {
         }
         ,
         mongodb: {
-          dbURL: 'mongodb://localhost/Dtabase'
+          dbURL: 'mongodb+srv://User:user@cluster0-pyuwh.mongodb.net/test?retryWrites=true&w=majority'
         },
         session:{
           cookieKey:'ngovanvietyasuo'
