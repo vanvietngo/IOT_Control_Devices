@@ -28,22 +28,22 @@ passport.use(
     // console.log('passport callback function');
     // console.log(profile);
     // check user allready in db
-    User.findOne({googleId:profile.id}).then((currentUser)=>{
-      if(currentUser){
-        // user is exist
-        console.log('user is exist : '+ currentUser);
-        done(null, currentUser); // if not have it -> treo server
-      }else{
-        // if not, create user
-        new User({
-          username: profile.displayName,
-          googleId: profile.id
-        }).save().then((newUser)=>{
-          console.log('new User create: ', newUser);
-          done(null, newUser);
-        });
-      }
-    });
+    // User.findOne({googleId:profile.id}).then((currentUser)=>{
+    //   if(currentUser){
+    //     // user is exist
+    //     console.log('user is exist : '+ currentUser);
+    //     done(null, currentUser); // if not have it -> treo server
+    //   }else{
+    //     // if not, create user
+    //     new User({
+    //       username: profile.displayName,
+    //       googleId: profile.id
+    //     }).save().then((newUser)=>{
+    //       console.log('new User create: ', newUser);
+    //       done(null, newUser);
+    //     });
+    //   }
+    // });
 
   })
 );
