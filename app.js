@@ -26,9 +26,9 @@ app.use(passport.initialize());
 app.use(passport.session());
 // connect mongoose
 
-mongoose.connect(keys.mongodb.dbURL,()=>{
-  console.log('connected to mongodb');
-})
+// mongoose.connect(keys.mongodb.dbURL,()=>{
+//   console.log('connected to mongodb');
+// })
 
 //--------------------------------
 // view engine setup
