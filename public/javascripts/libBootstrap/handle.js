@@ -1,5 +1,5 @@
 // var socket = io.connect('http://192.168.1.104:3000');
-var socket = io.connect('https://vanvietonline.herokuapp.com/');
+var socket = io.connect('http://vanvietonline.herokuapp.com/');
 
 
 socket.on("time-client", function(data){
