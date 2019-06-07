@@ -14,16 +14,10 @@ const authCheck = (req, res, next)=>{
 /* GET home page. */
 //-----------------------------------------------------------------------
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  res.render('login', { title: 'Express' });
 });
 //------------------------------------------------------------------------
-// router.get('/googlef973672c25ad254a.html', function(req, res, next) {
-//   res.render('googlef973672c25ad254a');
-// });
 
-router.get('/home', function(req, res, next) {
-  res.render('home');
-});
 
 // auth login
 router.get('/login', function(req, res, next) {
@@ -34,7 +28,7 @@ router.get('/logout', function(req, res, next) {
   // handle with passport
   // res.send('loggin out');
   req.logout();
-  res.redirect('/home')
+  res.redirect('/login')
 });
 // auth with Google
 router.get('/google', passport.authenticate('google', {
