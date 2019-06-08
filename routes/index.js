@@ -39,7 +39,7 @@ router.get('/google', passport.authenticate('google', {
 router.get('/profile',authCheck, function(req, res, next) {
   // handle with passport
   // res.send('This is Get profile' + req.user);
-  res.render('dataesp');
+  res.render('exampleShow');
 });
 // callback route for google to redirect to
 router.get('/google/redirect', passport.authenticate('google'),(req, res, next) => {
