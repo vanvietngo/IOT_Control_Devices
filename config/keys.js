@@ -7,7 +7,7 @@ module.exports = {
         }
         ,
         mongodb: {
-          dbURL: 'mongodb+srv://User:user@cluster0-pyuwh.mongodb.net/test'
+          dbURL: 'mongodb+srv://User:user@cluster0-pyuwh.mongodb.net/testtt'
         },
         session:{
           cookieKey:'ngovanvietyasuo'

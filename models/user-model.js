@@ -5,9 +5,18 @@ const Schema = mongoose.Schema;
 
 const userSchema = new Schema({
   username: String,
-  googleId: String
+  googleId: String,
+  avatar: String
 });
 
-const User = mongoose.model('user-user', userSchema);
+// const dataSchema = new Schema({
+//   nhietdo: String,
+//   doam: String
+// });
 
+const User = mongoose.model('user-user', userSchema);
+// const Data = mongoose.model('Data', userSchema);
+
+
+// module.exports = User;
 module.exports = User;
