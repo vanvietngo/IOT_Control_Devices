@@ -22,7 +22,7 @@ socket.on("Temperature-client", function(data){
   // append new value to the array
   arr.push(data);
 
-  $(".nt").html("Temperature: " + data.Temperature + " *C");
+  $(".nt").html("Temp: " + data.Temperature + " *C");
 });
 
 socket.on("Humidity-client", function(data){
