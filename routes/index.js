@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 const passport = require('passport');
+const dataController = require('../controllers/profile');
 
 const authCheck = (req, res, next)=>{
   if(!req.user){
@@ -26,7 +27,6 @@ router.get('/login', function(req, res, next) {
 // auth loguot
 router.get('/logout', function(req, res, next) {
   // handle with passport
-  // res.send('loggin out');
   req.logout();
   res.redirect('pages/login/login')
 });
@@ -35,14 +35,17 @@ router.get('/google', passport.authenticate('google', {
   scope: ['profile']
 }));
 
+router.get('/profile',authCheck, dataController.index);
 
-router.get('/profile',authCheck, function(req, res, next) {
-  // handle with passport
-  // res.send('This is Get profile' + req.user);
-  // res.render('dataesp', {User:req.user});
-  res.render('pages/showData/index', {User:req.user});
+// router.get('/profile',authCheck, function(req, res, next) {
+//   // handle with passport
+//   // res.send('This is Get profile' + req.user);
+//   // res.render('dataesp', {User:req.user});
+//   res.render('pages/showData/index', {User:req.user});
+//
+// });
 
-});
+
 // callback route for google to redirect to
 router.get('/google/redirect', passport.authenticate('google'),(req, res, next) => {
     // res.send(req.user);
