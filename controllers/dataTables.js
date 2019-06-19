@@ -3,7 +3,6 @@ const Data = require('../models/data-model');
 
 module.exports={
   index: (req, res, next)=>{
-    console.log("this is handle.js");
     var arrTime = [];
     var arrTemp = [];
     var arrHum = [];
@@ -28,7 +27,6 @@ module.exports={
 
         // res.status(200).send(element);
         res.render('pages/dataTable/tables', {Data:element});
-        // console.log("element.temp => " + element.Temperature);
 
 
       })

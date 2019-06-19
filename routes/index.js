@@ -27,14 +27,6 @@ router.get('/google/redirect', passport.authenticate('google'),(req, res, next) 
     res.redirect('/profile/');
 });
 
-// router.get('/profile',authCheck, function(req, res, next) {
-//   // handle with passport
-//   // res.send('This is Get profile' + req.user);
-//   // res.render('dataesp', {User:req.user});
-//   res.render('pages/showData/index', {User:req.user});
-//
-// });
-
 router.get('/profile',authCheck, dataController.index);
 
 /* GET home page. */

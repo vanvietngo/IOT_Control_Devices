@@ -22,7 +22,7 @@ app.set('port', port);
 
 var server = http.createServer(app);
 
-var socketio = require('../lib/socketio');
+var socketio = require('../socketServer/socketio');
 var io = socketio.io;
 io.attach(server);
 /**
