@@ -13,7 +13,7 @@ module.exports = {
        socket.on('client-send-lamp1-off', function (data) {
            console.log(data);
            console.log("da nhan dc status off");
-           io.sockets.emit("server-send-lamp1-off", {status:"on"});
+           io.sockets.emit("server-send-lamp1-off", {status:"off"});
 
        });
  }
