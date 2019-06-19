@@ -25,7 +25,7 @@ io.on('connection', function (socket) { //'connection' (1) này khác gì với 
     Humidity.Humidity(socket, arr);
 
     //lang nghe check switch
-    Lamp.lamp1(socket);
+    Lamp.lamp1(socket, io);
 });
 
 
