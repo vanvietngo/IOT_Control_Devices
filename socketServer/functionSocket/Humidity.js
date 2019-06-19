@@ -1,6 +1,6 @@
 module.exports = {
 
-    Humidity: (socket, arr) => {
+    Humidity: (socket, io, arr) => {
         // Send news on the socket
         socket.on('DHT-Humidity', function (data) {
             io.sockets.emit("Humidity-client", data);
