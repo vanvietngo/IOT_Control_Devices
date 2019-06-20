@@ -15,6 +15,7 @@ var socket = io.connect('http://vanvietonline.herokuapp.com/');
 })
       // Send news on the socket
       socket.on('server-send-lamp1-on', function (data) {
+        $("#btn1").prop("checked", true);
           console.log(data);
           console.log("da nhan dc status on");
           // io.sockets.emit("server-send-lamp1-on", {status:"on"});
@@ -22,6 +23,7 @@ var socket = io.connect('http://vanvietonline.herokuapp.com/');
       });
 
       socket.on('server-send-lamp1-off', function (data) {
+        $("#btn1").prop("checked", false); 
           console.log(data);
           console.log("da nhan dc status off");
 
