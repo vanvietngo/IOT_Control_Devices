@@ -1,7 +1,6 @@
 var socket = io.connect('http://vanvietonline.herokuapp.com/');
 
       // Hàm show kết quả
-      $(document).ready(function(){
 
       $("#btn1").click( function(){
       if( $(this).is(':checked') ){
@@ -12,7 +11,7 @@ var socket = io.connect('http://vanvietonline.herokuapp.com/');
         console.log("status lamp1 ==> off")
       }
       });
-})
+
       // Send news on the socket
       socket.on('server-send-lamp1-on', function (data) {
         $("#btn1").prop("checked", true);
@@ -23,7 +22,7 @@ var socket = io.connect('http://vanvietonline.herokuapp.com/');
       });
 
       socket.on('server-send-lamp1-off', function (data) {
-        $("#btn1").prop("checked", false); 
+        $("#btn1").prop("checked", false);
           console.log(data);
           console.log("da nhan dc status off");
 
