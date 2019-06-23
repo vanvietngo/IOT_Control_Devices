@@ -26,6 +26,9 @@ io.on('connection', function (socket) { //'connection' (1) này khác gì với 
 
     //lang nghe check switch
     Lamp.lamp1(socket, io);
+    Lamp.lamp2(socket, io);
+
+
 });
 
 

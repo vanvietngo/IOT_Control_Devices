@@ -16,25 +16,11 @@ var socket = io.connect('http://vanvietonline.herokuapp.com/');
       socket.on('server-send-lamp1-on', function (data) {
         $("#btn1").prop("checked", true);
           console.log(data);
-          console.log("da nhan dc status on");
-          // io.sockets.emit("server-send-lamp1-on", {status:"on"});
-
+          console.log("da nhan dc server-send-lamp1-on 1");
       });
 
       socket.on('server-send-lamp1-off', function (data) {
         $("#btn1").prop("checked", false);
           console.log(data);
-          console.log("da nhan dc status off");
-
-          // io.sockets.emit("server-send-lamp1-off", {status:"on"});
-
+          console.log("da nhan dc server-send-lamp1-off 1");
       });
-              // lamp 2
-              // if(input1.checked){
-              //   socket.emit("client-send-lamp2-on", {status:"on"});
-              //
-              // }else{
-              // socket.emit("client-send-lamp2-off", {status:"off"});
-              //
-              // }
-            // }

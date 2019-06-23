@@ -1,11 +1,11 @@
 var socket = io.connect('http://vanvietonline.herokuapp.com/');
 
 
-// Function handle timer
+// Function handle timer after display value on web
 function FunLampOn(valueChangee, timerForLamp0){
-  var hello = setInterval(function() { // when switch is checking ( ~ led is lighting)
+  var LampOn = setInterval(function() { // when switch is checking ( ~ led is lighting)
     if (valueChangee <= 0) {
-        clearInterval(hello);
+        clearInterval(LampOn);
         $(".value-timer-lamp-1").html("Time out").hide(4000);
 
     } else {
@@ -13,9 +13,11 @@ function FunLampOn(valueChangee, timerForLamp0){
         $(".value-timer-lamp-1").html("After  " + valueChangee + " s Lamp OFF").show();;
     }
 }, 1000);
+
+// Cancel timer for lamp
 $(".button-timer-Lamp-1-Cancel").click(function() {
   clearTimeout(timerForLamp0);
-  clearInterval(hello);
+  clearInterval(LampOn);
   // $(".value-timer-lamp-1").show(2000);
   $(".value-timer-lamp-1").html("Canceled").hide(4000);
 });
@@ -23,9 +25,9 @@ $(".button-timer-Lamp-1-Cancel").click(function() {
 //--------------------------
 
 function FunLampOff(valueChangee, timerForLamp1){
-  var hello = setInterval(function() {  // when switch is not checking ( ~ led isn't lighting)
+  var LampOff = setInterval(function() {  // when switch is not checking ( ~ led isn't lighting)
       if (valueChangee <= 0) {
-          clearInterval(hello);
+          clearInterval(LampOff);
           $(".value-timer-lamp-1").html("Time out").hide(4000);
 
       } else {
@@ -33,9 +35,11 @@ function FunLampOff(valueChangee, timerForLamp1){
           $(".value-timer-lamp-1").html("After  " + valueChangee + " s Lamp ON").show();;
       }
   }, 1000);
+
+  // Cancel timer for lamp
   $(".button-timer-Lamp-1-Cancel").click(function() {
     clearTimeout(timerForLamp1);
-    clearInterval(hello);
+    clearInterval(LampOff);
     $(".value-timer-lamp-1").html("Canceled").hide(4000);
     });
 }
