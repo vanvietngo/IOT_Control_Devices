@@ -22,7 +22,6 @@ module.exports = {
 
         socket.on('Client-send-ValueTimer-2', function (data) {
             io.sockets.emit("Server-send-ValueTimer-2", data);
-            console.log("dsts =>>>>>>>> " + data);
         });
 
         socket.on('Client-send-Cancel-Timer-2', function () {

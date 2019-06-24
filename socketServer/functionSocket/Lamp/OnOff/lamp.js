@@ -4,6 +4,7 @@ module.exports = {
         // Send news on the socket
         socket2.on('client-send-lamp2-on', function (data) {
             io2.sockets.emit("server-send-lamp2-on", {status:"on 2"});
+            console.log("use is : " + req.user);
 
         });
 
