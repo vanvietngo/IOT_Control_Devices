@@ -15,7 +15,7 @@ module.exports = {
 
     },
 
-    timerForLamp2: (socket, io) => {
+    TimerLamp2: (socket, io) => {
         socket.on('Client-send-Timeout-2', function () {
             io.sockets.emit("Server-send-Timeout-2");
         });
