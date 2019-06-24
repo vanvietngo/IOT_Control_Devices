@@ -6,11 +6,11 @@ socketio.io = io;
 
 const datta = require('../models/data-model');
 // require function socket
-var Lamp = require('./functionSocket/lamp');
-var Temperature = require('./functionSocket/Temperature');
-var Time = require('./functionSocket/Time');
-var Humidity = require('./functionSocket/Humidity');
-
+var Temperature = require('./functionSocket/DHT11/Temperature');
+var Time = require('./functionSocket/DHT11/Time');
+var Humidity = require('./functionSocket/DHT11/Humidity');
+var LampOnOff = require('./functionSocket/Lamp/OnOff/lamp');
+var TimerLamp1 = require('./functionSocket/Lamp/Timer/TimerLamp')
 var arr = [];
 
 //Khi có mệt kết nối được tạo giữa Socket Client và Socket Server
@@ -25,9 +25,9 @@ io.on('connection', function (socket) { //'connection' (1) này khác gì với 
     Humidity.Humidity(socket, io, arr);
 
     //lang nghe check switch
-    Lamp.lamp1(socket, io);
-    Lamp.lamp2(socket, io);
-
+    LampOnOff.lamp1(socket, io);
+    LampOnOff.lamp2(socket, io);
+    TimerLamp1.TimerLamp1(socket, io);
 
 });
 
