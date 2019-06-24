@@ -6,12 +6,12 @@ function FunLampOn(valueChangee, timerForLamp0){
   var LampOn = setInterval(function() { // when switch is checking ( ~ led is lighting)
     if (valueChangee <= 0) {
         clearInterval(LampOn);
-        socket.emit("Client-send-Timeout");
+        socket.emit("Client-send-Timeout-1");
         // $(".value-timer-lamp-1").html("Time out").hide(4000);
 
     } else {
         valueChangee -= 1;
-        socket.emit("Client-send-ValueTimer", valueChangee);
+        socket.emit("Client-send-ValueTimer-1", valueChangee);
         // $(".value-timer-lamp-1").html("After  " + valueChangee + " s Lamp OFF").show();;
     }
 }, 1000);
@@ -20,7 +20,7 @@ function FunLampOn(valueChangee, timerForLamp0){
 $(".button-timer-Lamp-1-Cancel").click(function() {
   clearTimeout(timerForLamp0);
   clearInterval(LampOn);
-  socket.emit("Client-send-Cancel-Timer");
+  socket.emit("Client-send-Cancel-Timer-1");
   // $(".value-timer-lamp-1").html("Canceled").hide(4000);
 });
 }
@@ -33,12 +33,12 @@ function FunLampOff(valueChangee, timerForLamp1){
   var LampOff = setInterval(function() {  // when switch is not checking ( ~ led isn't lighting)
       if (valueChangee <= 0) {
           clearInterval(LampOff);
-          socket.emit("Client-send-Timeout");
+          socket.emit("Client-send-Timeout-1");
           // $(".value-timer-lamp-1").html("Time out").hide(4000);
 
       } else {
           valueChangee -= 1;
-          socket.emit("Client-send-ValueTimer", valueChangee);
+          socket.emit("Client-send-ValueTimer-1", valueChangee);
           // $(".value-timer-lamp-1").html("After  " + valueChangee + " s Lamp ON").show();;
       }
   }, 1000);
@@ -47,7 +47,7 @@ function FunLampOff(valueChangee, timerForLamp1){
   $(".button-timer-Lamp-1-Cancel").click(function() {
     clearTimeout(timerForLamp1);
     clearInterval(LampOff);
-    socket.emit("Client-send-Cancel-Timer");
+    socket.emit("Client-send-Cancel-Timer-1");
     // $(".value-timer-lamp-1").html("Canceled").hide(4000);
     });
 }

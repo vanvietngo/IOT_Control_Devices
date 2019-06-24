@@ -28,6 +28,7 @@ io.on('connection', function (socket) { //'connection' (1) này khác gì với 
     LampOnOff.lamp1(socket, io);
     LampOnOff.lamp2(socket, io);
     TimerLamp.TimerLamp1(socket, io);
+    // TimerLamp.TimerLamp2(socket, io);
 
 });
 
