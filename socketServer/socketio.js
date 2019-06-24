@@ -10,7 +10,7 @@ var Temperature = require('./functionSocket/DHT11/Temperature');
 var Time = require('./functionSocket/DHT11/Time');
 var Humidity = require('./functionSocket/DHT11/Humidity');
 var LampOnOff = require('./functionSocket/Lamp/OnOff/lamp');
-var TimerLamp1 = require('./functionSocket/Lamp/Timer/TimerLamp')
+var TimerLamp = require('./functionSocket/Lamp/Timer/TimerLamp')
 var arr = [];
 
 //Khi có mệt kết nối được tạo giữa Socket Client và Socket Server
@@ -27,7 +27,7 @@ io.on('connection', function (socket) { //'connection' (1) này khác gì với 
     //lang nghe check switch
     LampOnOff.lamp1(socket, io);
     LampOnOff.lamp2(socket, io);
-    TimerLamp1.TimerLamp1(socket, io);
+    TimerLamp.TimerLamp1(socket, io);
 
 });
 
