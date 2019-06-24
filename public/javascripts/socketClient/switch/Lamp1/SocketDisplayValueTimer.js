@@ -9,7 +9,7 @@ socket.on("Server-send-Timeout", function () {
 
 socket.on("Server-send-ValueTimer", function (data) {
   // $(".value-timer-lamp-1").html("After  " + data + " s Lamp OFF").show();
-  console.log('Server-send-ValueTimer');
+  console.log('Server-send-ValueTimer =>  ' + data);
 
 });
 
