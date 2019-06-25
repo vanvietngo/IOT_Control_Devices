@@ -23,6 +23,22 @@ $(".button-timer-Lamp-1-Cancel").click(function() {
   socket.emit("Client-send-Cancel-Timer-1");
   // $(".value-timer-lamp-1").html("Canceled").hide(4000);
 });
+
+
+// khi dang dem timer ma on off switch thi cancel timer
+
+socket.on('server-send-lamp1-on', function (data) {
+  clearTimeout(timerForLamp0);
+  clearInterval(LampOn);
+  socket.emit("Client-send-Cancel-Timer-1");
+});
+
+socket.on('server-send-lamp1-off', function (data) {
+  clearTimeout(timerForLamp0);
+  clearInterval(LampOn);
+  socket.emit("Client-send-Cancel-Timer-1");
+});
+
 }
 //--------------------------
 
@@ -49,6 +65,19 @@ function FunLampOff(valueChangee, timerForLamp1){
     clearInterval(LampOff);
     socket.emit("Client-send-Cancel-Timer-1");
     // $(".value-timer-lamp-1").html("Canceled").hide(4000);
+    });
+
+// khi dang dem timer ma on off switch thi cancel timer
+    socket.on('server-send-lamp1-on', function (data) {
+      clearTimeout(timerForLamp1);
+      clearInterval(LampOff);
+      socket.emit("Client-send-Cancel-Timer-1");
+    });
+
+    socket.on('server-send-lamp1-off', function (data) {
+      clearTimeout(timerForLamp1);
+      clearInterval(LampOff);
+      socket.emit("Client-send-Cancel-Timer-1");
     });
 }
 
