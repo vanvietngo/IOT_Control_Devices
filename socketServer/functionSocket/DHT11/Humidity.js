@@ -14,11 +14,11 @@ module.exports = {
             arr.push(data.Humidity);
 
             // add data to mongo by arr
-            // dataModel.create({
-            //   time: arr[0],
-            //   Temperature: arr[1],
-            //   Humidity:arr[2]
-            // });
+            dataModel.create({
+              time: arr[0],
+              Temperature: arr[1],
+              Humidity:arr[2]
+            });
             console.log("Arr Sum  = " + arr);
             arr = [];        });
     }
