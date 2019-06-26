@@ -4,7 +4,7 @@ var io = socket_io();
 var socketio = {};
 socketio.io = io;
 
-const data = require('../models/data-model');
+const Data = require('../models/data-model');
 // require function socket
 var Temperature = require('./functionSocket/DHT11/Temperature');
 var Humidity = require('./functionSocket/DHT11/Humidity');
@@ -14,10 +14,9 @@ var arr = [];
 
 //Khi có mệt kết nối được tạo giữa Socket Client và Socket Server
 io.on('connection', function (socket) { //'connection' (1) này khác gì với 'connection' (2)
-    //khi lắng nghe được lệnh "DHT-Temperature // DHT-Humidity" với một tham số, và chúng ta đặt tên tham số đó là data. Mình thích thì mình đặt thôi
+// DHT and save to Mongo Clound
     Temperature.Temperature(socket, io, arr);
-    //khi lắng nghe được lệnh "Humidity-client // DHT-Humidity" với một tham số, và chúng ta đặt tên tham số đó là data. Mình thích thì mình đặt thôi
-    Humidity.Humidity(socket, io, arr, data);
+    Humidity.Humidity(socket, io, arr, Data);
 
     //lang nghe check switch
     LampOnOff.lamp1(socket, io);

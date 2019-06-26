@@ -5,7 +5,9 @@ module.exports = {
         socket.on('DHT-Humidity', function (data) {
             io.sockets.emit("Humidity-client", data);
             arr.push(data.Humidity);
+
             // add data to mongo by arr
+            console.log("Arr = " + arr);
             dataModel.create({
               time: arr[0],
               Temperature: arr[1],
