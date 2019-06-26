@@ -5,6 +5,12 @@ var socket = io.connect('http://vanvietonline.herokuapp.com/');
       $("#btn1").click( function(){
       if( $(this).is(':checked') ){
         socket.emit("client-send-lamp1-on", "on");
+        var i = 100
+        while(i){
+          $("#someElement").fadeOut(100).fadeIn(100);
+          i-=1;
+        }
+
         console.log("staus lamp1 on");
       } else{
         socket.emit("client-send-lamp1-off", "off");

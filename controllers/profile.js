@@ -10,7 +10,6 @@ module.exports={
     var element = {};
 
 
-    // var i;
     Data.find().then((data)=>{
         for (var i in data){
           arrTime.push(data[i].time);
