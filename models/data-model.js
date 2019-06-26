@@ -1,5 +1,5 @@
 //Viet123456789@
-
+// modiles for DHT 11
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 

@@ -4,10 +4,9 @@ var io = socket_io();
 var socketio = {};
 socketio.io = io;
 
-const datta = require('../models/data-model');
+const data = require('../models/data-model');
 // require function socket
 var Temperature = require('./functionSocket/DHT11/Temperature');
-var Time = require('./functionSocket/DHT11/Time');
 var Humidity = require('./functionSocket/DHT11/Humidity');
 var LampOnOff = require('./functionSocket/Lamp/OnOff/lamp');
 var TimerLamp = require('./functionSocket/Lamp/Timer/TimerLamp')
@@ -17,12 +16,8 @@ var arr = [];
 io.on('connection', function (socket) { //'connection' (1) này khác gì với 'connection' (2)
     //khi lắng nghe được lệnh "DHT-Temperature // DHT-Humidity" với một tham số, và chúng ta đặt tên tham số đó là data. Mình thích thì mình đặt thôi
     Temperature.Temperature(socket, io, arr);
-
-    //khi lắng nghe được lệnh "DHT-Temperature // DHT-Humidity" với một tham số, và chúng ta đặt tên tham số đó là data. Mình thích thì mình đặt thôi
-    Time.Time(socket, io, arr);
-
     //khi lắng nghe được lệnh "Humidity-client // DHT-Humidity" với một tham số, và chúng ta đặt tên tham số đó là data. Mình thích thì mình đặt thôi
-    Humidity.Humidity(socket, io, arr);
+    Humidity.Humidity(socket, io, arr, data);
 
     //lang nghe check switch
     LampOnOff.lamp1(socket, io);
