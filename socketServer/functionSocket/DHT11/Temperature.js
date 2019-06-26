@@ -6,6 +6,7 @@ module.exports = {
             arr.push(Date());
             arr.push(data.Temperature);
             io.sockets.emit("Temperature-client", data);
+            console.log("Arr 1111  = " + arr);
 
         });
     }
