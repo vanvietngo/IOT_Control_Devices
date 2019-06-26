@@ -8,11 +8,11 @@ module.exports = {
 
             // add data to mongo by arr
             console.log("Arr = " + arr);
-            dataModel.create({
-              time: arr[0],
-              Temperature: arr[1],
-              Humidity:arr[2]
-            });
+            // dataModel.create({
+            //   time: arr[0],
+            //   Temperature: arr[1],
+            //   Humidity:arr[2]
+            // });
             arr = [];
         });
     }
