@@ -7,13 +7,12 @@ module.exports = {
             arr.push(data.Humidity);
 
             // add data to mongo by arr
-            console.log("Arr = " + arr);
             // dataModel.create({
             //   time: arr[0],
             //   Temperature: arr[1],
             //   Humidity:arr[2]
             // });
-            arr = [];
+            // arr = [];
         });
     }
 };
