@@ -15,10 +15,9 @@ var arr = [];
 //Khi có mệt kết nối được tạo giữa Socket Client và Socket Server
 io.on('connection', function (socket) { //'connection' (1) này khác gì với 'connection' (2)
 // DHT and save to Mongo Clound
-    Temperature.Temperature(socket, io, arr);
+    // Temperature.Temperature(socket, io, arr);
     Humidity.Humidity(socket, io, arr, Data);
-    console.log("Arr Sum  = " + arr);
-    arr = [];
+
 
     //lang nghe check switch
     LampOnOff.lamp1(socket, io);
