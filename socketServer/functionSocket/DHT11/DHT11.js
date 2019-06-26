@@ -1,6 +1,6 @@
 module.exports = {
 
-    Humidity: (socket, io, arr, dataModel) => {
+    DHT: (socket, io, arr, dataModel) => {
       //khi lắng nghe được lệnh "DHT-Temperature // DHT-Humidity" với một tham số, và chúng ta đặt tên tham số đó là data. Mình thích thì mình đặt thôi
       socket.on('DHT-Temperature', function (data) {
           arr.push(Date());
@@ -15,7 +15,7 @@ module.exports = {
 
             // add data to mongo by arr
             dataModel.create({
-              time: arr[0],
+              Time: arr[0],
               Temperature: arr[1],
               Humidity:arr[2]
             });

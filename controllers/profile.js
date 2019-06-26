@@ -10,9 +10,9 @@ module.exports={
     var element = {};
 
 
-    var i;
+    // var i;
     Data.find().then((data)=>{
-        for (i in data){
+        for (var i in data){
           arrTime.push(data[i].time);
           arrTemp.push(data[i].Temperature);
           arrHum.push(data[i].Humidity);
@@ -26,7 +26,7 @@ module.exports={
     }
 
         // res.status(200).send(element);
-        res.render('pages/showData/index', {Data:element});
+        res.render('pages/Show-Systerm-Ctl/index', {Data:element});
 
 
       })

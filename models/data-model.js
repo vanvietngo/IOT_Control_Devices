@@ -5,7 +5,7 @@ const Schema = mongoose.Schema;
 
 
 const dataSchema = new Schema({
-  time: String,
+  Time: String,
   Temperature: String,
   Humidity: String
 });

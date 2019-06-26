@@ -7,7 +7,7 @@ const Schema = mongoose.Schema;
 
 const CtlSưitchSchema = new Schema({
   Time: String,
-  Device:String,
+  DeviceName:String,
   User: String,
   Status: String,
   Timer:String
