@@ -91,7 +91,7 @@ $(".button-timer-Lamp-3-Active").click(function() {
   // handle switch on - off after a period time
   // Function timer for Lamp use setTimeout() -- Lamp isn't checking
   var timerForLamp = setTimeout(function() {
-      if ($("#btn1").is(':checked')) {
+      if ($("#btn3").is(':checked')) {
           socket.emit("client-send-lamp3-off", "off");
       } else {
           socket.emit("client-send-lamp3-on", "on");
