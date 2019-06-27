@@ -2,7 +2,7 @@ var socket = io.connect('http://vanvietonline.herokuapp.com/');
 
 
 // Function handle timer after display value on web
-function FunLampOn(valueChangee, timerForLamp0){
+function FunLampOn3(valueChangee, timerForLamp0){
   var LampOn = setInterval(function() { // when switch is checking ( ~ led is lighting)
     if (valueChangee <= 0) {
         clearInterval(LampOn);
@@ -18,9 +18,9 @@ function FunLampOn(valueChangee, timerForLamp0){
 $(".button-timer-Lamp-3-Cancel").click(function() {
   clearTimeout(timerForLamp0);
   clearInterval(LampOn);
+  // $(".value-timer-lamp-1").show(2000);
   socket.emit("Client-send-Cancel-Timer-3");
 });
-
 
 // khi dang dem timer ma on off switch thi cancel timer
 
@@ -30,19 +30,15 @@ socket.on('server-send-lamp3-on', function (data) {
   socket.emit("Client-send-Cancel-Timer-3");
 });
 
-socket.on('server-send-lamp3-off', function (data) {
+socket.on('server-send-lamp2-off', function (data) {
   clearTimeout(timerForLamp0);
   clearInterval(LampOn);
   socket.emit("Client-send-Cancel-Timer-3");
 });
-
 }
 //--------------------------
 
-
-
-
-function FunLampOff(valueChangee, timerForLamp1){
+function FunLampOff3(valueChangee, timerForLamp1){
   var LampOff = setInterval(function() {  // when switch is not checking ( ~ led isn't lighting)
       if (valueChangee <= 0) {
           clearInterval(LampOff);
@@ -61,30 +57,26 @@ function FunLampOff(valueChangee, timerForLamp1){
     socket.emit("Client-send-Cancel-Timer-3");
     });
 
-// khi dang dem timer ma on off switch thi cancel timer
-    socket.on('server-send-lamp3-on', function (data) {
-      clearTimeout(timerForLamp1);
-      clearInterval(LampOff);
-      socket.emit("Client-send-Cancel-Timer-3");
-    });
+    // khi dang dem timer ma on off switch thi cancel timer
+        socket.on('server-send-lamp3-on', function (data) {
+          clearTimeout(timerForLamp1);
+          clearInterval(LampOff);
+          socket.emit("Client-send-Cancel-Timer-3");
+        });
 
-    socket.on('server-send-lamp3-off', function (data) {
-      clearTimeout(timerForLamp1);
-      clearInterval(LampOff);
-      socket.emit("Client-send-Cancel-Timer-3");
-    });
+        socket.on('server-send-lamp3-off', function (data) {
+          clearTimeout(timerForLamp1);
+          clearInterval(LampOff);
+          socket.emit("Client-send-Cancel-Timer-3");
+        });
 }
-
-
-
-
 //-----------------------  main.js -------------------
 
 $(".button-timer-Lamp-3-Active").click(function() {
 
   // handle switch on - off after a period time
   // Function timer for Lamp use setTimeout() -- Lamp isn't checking
-  var timerForLamp = setTimeout(function() {
+  var timerForLamp2 = setTimeout(function() {
       if ($("#btn3").is(':checked')) {
           socket.emit("client-send-lamp3-off", "off");
       } else {
@@ -92,15 +84,15 @@ $(".button-timer-Lamp-3-Active").click(function() {
       }
   }, $(".timer-Lamp-3").val() * 1000);
 
-    var valueChange = $(".timer-Lamp-3").val();
+    var valueChange2 = $(".timer-Lamp-3").val();
     // -- display value timer realtime
     // -- button is checking
     if ($("#btn3").is(':checked')) {
-        var LampOn = FunLampOn(valueChange, timerForLamp);
+        var LampOn2 = FunLampOn2(valueChange2, timerForLamp2);
 
     } else {
       // -- button ism't checking
-      var LampOff = FunLampOff(valueChange, timerForLamp);
+      var LampOff2 = FunLampOff2(valueChange2, timerForLamp2);
     }
 
 
