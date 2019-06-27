@@ -40,76 +40,7 @@
     <% include ./../../elements/TableControl/index %>
 
 
-        <div class="navbar"><span>Real-Time Chart with Plotly.js</span></div>
-        <div class="wrapper">
-            <div id="chart"></div>
-            <script>
-                function getData() {
-                    return Math.random();
-                }
-                Plotly.plot('chart',[{
-                    y:[getData()],
-                    type:'line'
-                }]);
-
-                var cnt = 0;
-                setInterval(function(){
-                    Plotly.extendTraces('chart',{ y:[[getData()]]}, [0]);
-                    cnt++;
-                    if(cnt > 500) {
-                        Plotly.relayout('chart',{
-                            xaxis: {
-                                range: [cnt-500,cnt]
-                            }
-                        });
-                    }
-                },1000);
-            </script>
-        </div>
         <!-- DataTables Example -->
-        <div class="card mb-3">
-          <div class="card-header">
-            <i class="fas fa-table"></i>
-            Data Table Example</div>
-          <div class="card-body">
-            <div class="table-responsive">
-              <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                <thead>
-                  <tr>
-                    <th>Position</th>
-                    <th>Time</th>
-                    <th>Temperature</th>
-                    <th>Humidity</th>
-                    <!-- <th>Start date</th> -->
-                    <!-- <th>Salary</th> -->
-                  </tr>
-                </thead>
-                <tfoot>
-                  <tr>
-                    <th>Position</th>
-                    <th>Time</th>
-                    <th>Temperature</th>
-                    <th>Humidity</th>
-                    <!-- <th>Start date</th> -->
-                    <!-- <th>Salary</th> -->
-                  </tr>
-                </tfoot>
-                <tbody>
-                  <% for(var i=0; i<Data.Temperature.length; i++) {%>
-                       <tr>
-                         <td>Nhà Việt</td>
-                         <td><%= Data.Time[i] %></td>
-                         <td><%= Data.Temperature[i] %></td>
-                         <td><%= Data.Humidity[i] %></td>
-                       </tr>
-                    <% } %>
-
-                </tbody>
-              </table>
-            </div>
-          </div>
-          <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
-        </div>
 
       </div>
       <!-- /.container-fluid -->
