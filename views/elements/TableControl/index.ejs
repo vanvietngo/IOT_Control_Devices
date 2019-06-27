@@ -72,40 +72,44 @@
 <!-- Hang 1  -->
 <div class="row">
     <!-- bang 1 -->
+    <!-- Temperature -->
     <% include ./LibFunction/DHT/Temperature %>
-        <!-- Temperature -->
         <!-- bang 2 -->
+        <!-- Humidity -->
         <% include ./LibFunction/DHT/Humidity %>
-            <!-- Humidity -->
             <!-- bang 3 -->
+            <!-- tIME -->
             <% include ./LibFunction/DHT/Time %>
-                <!-- tIME -->
-                <% include ./LibFunction/InformOther/Infor %>
+                <!-- bang 4 -->
+                <!-- Theif -->
+                <% include ./LibFunction/InformOther/Theif %>
 
 </div>
 <!-- Hang 2 -->
 <div class="row">
     <!-- bang 1 -->
     <!-- Lamp - 1 -->
-    <% include ./LibFunction/Lamp/Lamp-1 %>
+    <% include ./LibFunction/Device/Device-1 %>
         <!-- bang 2 -->
         <!-- Lamp 2 -->
-        <% include ./LibFunction/Lamp/Lamp-2 %>
+        <% include ./LibFunction/Device/Device-2 %>
             <!-- bang 3 -->
             <!-- Lamp 3 -->
-            <% include ./LibFunction/Lamp/Lamp-3 %>
-                  <% include ./LibFunction/InformOther/Rainning %>
+            <% include ./LibFunction/Device/Device-3 %>
+                <!-- bang 4 -->
+                <!-- Lamp 4 -->
+                <% include ./LibFunction/InformOther/Rainning %>
 
 </div>
 <!-- Hang 3 -->
 <div class="row">
     <!-- bang 1 -->
     <!-- Lamp - 1 -->
-    <% include ./LibFunction/Lamp/Lamp-1 %>
+    <% include ./LibFunction/Device/Device-4 %>
         <!-- bang 2 -->
         <!-- Lamp 2 -->
-        <% include ./LibFunction/Lamp/Lamp-2 %>
+        <% include ./LibFunction/Device/Device-5 %>
             <!-- bang 3 -->
             <!-- Lamp 3 -->
-            <% include ./LibFunction/Lamp/Lamp-3 %>
+            <% include ./LibFunction/Device/Device-6 %>
 </div>
