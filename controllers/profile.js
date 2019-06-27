@@ -12,14 +12,14 @@ module.exports={
 
     Data.find().then((data)=>{
         for (var i in data){
-          arrTime.push(data[i].time);
+          arrTime.push(data[i].Time);
           arrTemp.push(data[i].Temperature);
           arrHum.push(data[i].Humidity);
         }
 
     element = {
       user:req.user,
-      time:arrTime,
+      Time:arrTime,
       Temperature:arrTemp,
       Humidity:arrHum
     }
