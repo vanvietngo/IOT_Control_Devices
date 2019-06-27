@@ -10,9 +10,8 @@ module.exports={
     var element = {};
 
 
-    var i;
     Data.find().then((data)=>{
-        for (i in data){
+        for (var i in data){
           arrTime.push(data[i].Time);
           arrTemp.push(data[i].Temperature);
           arrHum.push(data[i].Humidity);
