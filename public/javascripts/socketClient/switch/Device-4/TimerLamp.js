@@ -7,12 +7,10 @@ function FunLampOn(valueChangee, timerForLamp0){
     if (valueChangee <= 0) {
         clearInterval(LampOn);
         socket.emit("Client-send-Timeout-4");
-        // $(".value-timer-lamp-1").html("Time out").hide(4000);
 
     } else {
         valueChangee -= 1;
         socket.emit("Client-send-ValueTimer-4", valueChangee);
-        // $(".value-timer-lamp-1").html("After  " + valueChangee + " s Lamp OFF").show();;
     }
 }, 1000);
 
@@ -21,7 +19,6 @@ $(".button-timer-Lamp-4-Cancel").click(function() {
   clearTimeout(timerForLamp0);
   clearInterval(LampOn);
   socket.emit("Client-send-Cancel-Timer-4");
-  // $(".value-timer-lamp-1").html("Canceled").hide(4000);
 });
 
 
@@ -55,7 +52,6 @@ function FunLampOff(valueChangee, timerForLamp1){
       } else {
           valueChangee -= 1;
           socket.emit("Client-send-ValueTimer-4", valueChangee);
-          // $(".value-timer-lamp-1").html("After  " + valueChangee + " s Lamp ON").show();;
       }
   }, 1000);
 
@@ -64,7 +60,6 @@ function FunLampOff(valueChangee, timerForLamp1){
     clearTimeout(timerForLamp1);
     clearInterval(LampOff);
     socket.emit("Client-send-Cancel-Timer-4");
-    // $(".value-timer-lamp-1").html("Canceled").hide(4000);
     });
 
 // khi dang dem timer ma on off switch thi cancel timer
