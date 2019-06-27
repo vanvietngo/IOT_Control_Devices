@@ -88,11 +88,11 @@ $(".button-timer-Lamp-3-Active").click(function() {
     // -- display value timer realtime
     // -- button is checking
     if ($("#btn3").is(':checked')) {
-        var LampOn2 = FunLampOn2(valueChange3, timerForLamp3);
+        var LampOn3 = FunLampOn2(valueChange3, timerForLamp3);
 
     } else {
       // -- button ism't checking
-      var LampOff2 = FunLampOff2(valueChange3, timerForLamp3);
+      var LampOff3 = FunLampOff2(valueChange3, timerForLamp3);
     }
 
 
