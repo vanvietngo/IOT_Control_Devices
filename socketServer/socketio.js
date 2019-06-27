@@ -9,7 +9,7 @@ const Data = require('../models/data-model');
 // require function socket
 var DHT11 = require('./functionSocket/DHT11/DHT11');
 
-var LampOnOff = require('./functionSocket/Lamp/OnOff/lamp');
+var DeviceOnOff = require('./functionSocket/Lamp/OnOff/lamp');
 var TimerLamp = require('./functionSocket/Lamp/Timer/TimerLamp')
 
 var arr = [];
@@ -21,8 +21,13 @@ io.on('connection', function (socket) { //'connection' (1) này khác gì với 
 
 
     //lang nghe check switch
-    LampOnOff.lamp1(socket, io);
-    LampOnOff.lamp2(socket, io);
+    DeviceOnOff.Device1(socket, io);
+    DeviceOnOff.Device2(socket, io);
+    DeviceOnOff.Device3(socket, io);
+    DeviceOnOff.Device4(socket, io);
+    DeviceOnOff.Device5(socket, io);
+    DeviceOnOff.Device6(socket, io);
+
     TimerLamp.TimerLamp1(socket, io);
     TimerLamp.TimerLamp2(socket, io);
 
