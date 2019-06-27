@@ -85,7 +85,7 @@ $(".button-timer-Lamp-4-Active").click(function() {
 
   // handle switch on - off after a period time
   // Function timer for Lamp use setTimeout() -- Lamp isn't checking
-  var timerForLamp = setTimeout(function() {
+  var timerForLamp4 = setTimeout(function() {
       if ($("#btn4").is(':checked')) {
           socket.emit("client-send-lamp4-off", "off");
       } else {
@@ -93,15 +93,15 @@ $(".button-timer-Lamp-4-Active").click(function() {
       }
   }, $(".timer-Lamp-4").val() * 1000);
 
-    var valueChange = $(".timer-Lamp-4").val();
+    var valueChange4 = $(".timer-Lamp-4").val();
     // -- display value timer realtime
     // -- button is checking
     if ($("#btn4").is(':checked')) {
-        var LampOn = FunLampOn(valueChange, timerForLamp);
+        var LampOn = FunLampOn(valueChange4, timerForLamp4);
 
     } else {
       // -- button ism't checking
-      var LampOff = FunLampOff(valueChange, timerForLamp);
+      var LampOff = FunLampOff(valueChange4, timerForLamp4);
     }
 
 
