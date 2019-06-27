@@ -2,7 +2,7 @@ var socket = io.connect('http://vanvietonline.herokuapp.com/');
 
 
 // Function handle timer after display value on web
-function FunLampOn(valueChangee, timerForLamp0){
+function FunLampOn4(valueChangee, timerForLamp0){
   var LampOn = setInterval(function() { // when switch is checking ( ~ led is lighting)
     if (valueChangee <= 0) {
         clearInterval(LampOn);
@@ -42,7 +42,7 @@ socket.on('server-send-lamp4-off', function (data) {
 
 
 
-function FunLampOff(valueChangee, timerForLamp1){
+function FunLampOff4(valueChangee, timerForLamp1){
   var LampOff = setInterval(function() {  // when switch is not checking ( ~ led isn't lighting)
       if (valueChangee <= 0) {
           clearInterval(LampOff);
