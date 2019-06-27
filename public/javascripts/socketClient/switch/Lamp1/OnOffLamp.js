@@ -9,10 +9,11 @@ var socket = io.connect('http://vanvietonline.herokuapp.com/');
         var myStopFunction = setInterval(function(){
           $("#someElement").fadeOut(100).fadeIn(100);
         }, 500);
+        
+      $("#someElement").click(function(){
+        clearInterval(myStopFunction);
+      })
 
-        socket.on('server-send-lamp1-off', function (data) {
-          clearInterval(myStopFunction);
-        });
 
 
       } else{
