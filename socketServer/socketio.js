@@ -10,7 +10,7 @@ const Data = require('../models/data-model');
 var DHT11 = require('./functionSocket/DHT11/DHT11');
 
 var DeviceOnOff = require('./functionSocket/Lamp/OnOff/lamp');
-var TimerLamp = require('./functionSocket/Lamp/Timer/TimerLamp')
+var TimerDevice = require('./functionSocket/Lamp/Timer/TimerLamp')
 
 var arr = [];
 
@@ -28,8 +28,12 @@ io.on('connection', function (socket) { //'connection' (1) này khác gì với 
     DeviceOnOff.Device5(socket, io);
     DeviceOnOff.Device6(socket, io);
 
-    TimerLamp.TimerLamp1(socket, io);
-    TimerLamp.TimerLamp2(socket, io);
+    TimerDevice.TimerDevice1(socket, io);
+    TimerDevice.TimerDevice2(socket, io);
+    TimerDevice.TimerDevice3(socket, io);
+    TimerDevice.TimerDevice4(socket, io);
+    TimerDevice.TimerDevice5(socket, io);
+    TimerDevice.TimerDevice6(socket, io);
 
 });
 
