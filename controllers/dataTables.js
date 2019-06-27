@@ -23,7 +23,7 @@ module.exports={
       Temperature:arrTemp,
       Humidity:arrHum
     }
-
+console.log("data is  " + element);
         // res.status(200).send(element);
         res.render('pages/dataTable/tables', {Data:element});
 
