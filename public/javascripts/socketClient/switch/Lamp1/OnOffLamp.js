@@ -5,17 +5,6 @@ var socket = io.connect('http://vanvietonline.herokuapp.com/');
       $("#btn1").click( function(i){
       if( $(this).is(':checked') ){
         socket.emit("client-send-lamp1-on", "on");
-
-        var myStopFunction = setInterval(function(){
-          $("#someElement").fadeOut(100).fadeIn(100);
-        }, 500);
-        
-      $("#someElement").click(function(){
-        clearInterval(myStopFunction);
-      })
-
-
-
       } else{
         socket.emit("client-send-lamp1-off", "off");
       }
@@ -28,8 +17,4 @@ var socket = io.connect('http://vanvietonline.herokuapp.com/');
 
       socket.on('server-send-lamp1-off', function (data) {
         $("#btn1").prop("checked", false);
-        i=0;
-
-        console.log('i = ' + i)
-
       });
