@@ -4,11 +4,9 @@
   width: 50px;
   height: 50px;
   border-radius: 50%;
-   /* margin-right: 10px; */
+  margin-left: 30px;
 }
-.ava{
-  margin-left: 300px !important;
-}
+
 </style>
 
 <!-- audio -->
@@ -18,9 +16,16 @@
 <audio id="beep-two" controls="controls" style="display:none">
   <source src="audio/beep-2.wav"></source>
 </audio>
+<audio id="beep-warning" controls="controls" style="display:none">
+  <source src="audio/warning.wav"></source>
+</audio>
+<div class="class="aaa"">
+  <b>H᷈ỌC᷈ V᷈I᷈ỆN᷈ C᷈ÔN᷈G᷈ N᷈G᷈H᷈Ệ B᷈ƯU᷈ C᷈H᷈ÍN᷈H᷈ V᷈I᷈ỄN᷈ T᷈H᷈ÔN᷈G᷈</b><br>
+  <b">🅺🅷🅾🅰 🅺Ĩ 🆃🅷🆄Ậ🆃 Đ🅸Ệ🅽 Đ🅸Ệ🅽 🆃Ử</b>
+</div>
 
 
-<nav class="navbar navbar-expand navbar-dark bg-dark static-top">
+<nav class="navbar navbar-expand navbar-dark bg-primary static-top">
 
   <a class="navbar-brand mr-1" href="/profile/#">Start Bootstrap</a>
 
@@ -31,6 +36,7 @@
 
 <div class="dropdown ava">
   <img src="<%= Data.user.avatar%>" alt="Avatar" class="avatar dropdown-toggle"id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  <b style="color:red"><%= Data.user.username%></b>
   <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
     <button class="dropdown-item" type="button"><%=Data.user.username%></button>
     <button class="dropdown-item" type="button"><a href="/logout">Logout</a></button>
