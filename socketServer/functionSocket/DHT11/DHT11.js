@@ -19,7 +19,7 @@ module.exports = {
               Temperature: arr[1],
               Humidity:arr[2]
             });
-            console.log("Arr Sum  = " + arr);
-            arr = [];        });
+            arr = [];
+          });
     }
 };
