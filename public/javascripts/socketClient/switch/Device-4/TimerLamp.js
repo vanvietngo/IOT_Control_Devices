@@ -16,6 +16,10 @@ function FunLampOn4(valueChangee, timerForLamp0){
 
 // Cancel timer for lamp
 $(".button-timer-Lamp-4-Cancel").click(function() {
+  // audio
+  var beep2 = $("#beep-two")[0];
+  beep2.play();
+  
   clearTimeout(timerForLamp0);
   clearInterval(LampOn);
   socket.emit("Client-send-Cancel-Timer-4");
@@ -57,6 +61,10 @@ function FunLampOff4(valueChangee, timerForLamp1){
 
   // Cancel timer for lamp
   $(".button-timer-Lamp-4-Cancel").click(function() {
+    // audio
+    var beep2 = $("#beep-two")[0];
+    beep2.play();
+
     clearTimeout(timerForLamp1);
     clearInterval(LampOff);
     socket.emit("Client-send-Cancel-Timer-4");
@@ -82,7 +90,9 @@ function FunLampOff4(valueChangee, timerForLamp1){
 //-----------------------  main.js -------------------
 
 $(".button-timer-Lamp-4-Active").click(function() {
-
+  // audio
+  var beep2 = $("#beep-two")[0];
+  beep2.play();
   // handle switch on - off after a period time
   // Function timer for Lamp use setTimeout() -- Lamp isn't checking
   var timerForLamp4 = setTimeout(function() {

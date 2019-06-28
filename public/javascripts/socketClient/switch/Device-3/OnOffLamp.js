@@ -3,6 +3,10 @@ var socket = io.connect('http://vanvietonline.herokuapp.com/');
       // Hàm show kết quả
 
       $("#btn3").click( function(){
+        // audio
+        var beepOne = $("#beep-one")[0];
+        beepOne.play();
+        
       if( $(this).is(':checked') ){
         socket.emit("client-send-lamp3-on", "on");
       } else{

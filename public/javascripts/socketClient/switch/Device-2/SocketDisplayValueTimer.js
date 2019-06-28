@@ -7,7 +7,11 @@ socket.on("Server-send-Timeout-2", function () {
 
 
 socket.on("Server-send-ValueTimer-2", function (data) {
-  $(".value-timer-lamp-2").html("After  " + data + " s Lamp OFF").show();
+  if ($("#btn2").is(':checked')) {
+    $(".value-timer-lamp-2").html("After  " + data + " s Lamp OFF").show();
+  } else {
+    $(".value-timer-lamp-2").html("After  " + data + " s Lamp ON").show();
+  }
 });
 
 
