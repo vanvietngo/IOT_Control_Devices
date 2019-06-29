@@ -16,6 +16,7 @@ var DHT11 = require('./functionSocket/DHT11/DHT11');
 
 var DeviceOnOff = require('./functionSocket/Lamp/OnOff/lamp');
 var TimerDevice = require('./functionSocket/Lamp/Timer/TimerLamp');
+// var WarningTheif = require('');
 
 var arr = [];
 //Khi có mệt kết nối được tạo giữa Socket Client và Socket Server
