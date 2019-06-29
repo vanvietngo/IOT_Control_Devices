@@ -7,7 +7,7 @@ module.exports = {
         }
         ,
         mongodb: {
-          dbURL: 'mongodb+srv://User:user@cluster0-pyuwh.mongodb.net/testtt'
+          dbURL: 'mongodb+srv://User:user@cluster0-pyuwh.mongodb.net/Data-Smar-tHome'
         },
         session:{
           cookieKey:'ngovanvietyasuo'
