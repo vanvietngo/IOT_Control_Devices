@@ -35,7 +35,7 @@ PTIT HCM
 
 <div class="dropdown ava">
   <img src="<%= Data.user.avatar%>" alt="Avatar" class="avatar dropdown-toggle"id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-  <b style="color:red"><%= Data.user.username%></b>
+  <b style="color:red" id="UserName"><%= Data.user.username%></b>
   <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
     <button class="dropdown-item" type="button"><%=Data.user.username%></button>
     <button class="dropdown-item" type="button"><a href="/logout">Logout</a></button>

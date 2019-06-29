@@ -9,8 +9,19 @@ var socket = io.connect('http://vanvietonline.herokuapp.com/');
 
       if( $(this).is(':checked') ){
         socket.emit("client-send-lamp1-on", "on");
+        // save to Database
+        socket.emit("client-send-save-to-DB-of-Device-1", {
+          user: $('#UserName').val(),
+          status: "ON"
+        });
+
       } else{
         socket.emit("client-send-lamp1-off", "off");
+        // save to Database
+        socket.emit("client-send-save-to-DB-of-Device-1", {
+          user: $('#UserName').val(),
+          status: "OFF"
+        });
       }
       });
 

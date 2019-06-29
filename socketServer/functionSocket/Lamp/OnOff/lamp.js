@@ -11,6 +11,11 @@ module.exports = {
             io.sockets.emit("server-send-lamp1-off");
 
         });
+
+        socket.on('client-send-save-to-DB-of-Device-1', function (data) {
+            console.log("Data on off sw : => " + data);
+
+        });
   },
   Device2: (socket2, io2)=>{
         // Send news on the socket
