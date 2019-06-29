@@ -13,7 +13,7 @@ const CtlSưitchSchema = new Schema({
   Timer:String
 });
 
-const CtlSwitch = mongoose.model('CtlSưitchSchema', dataSchema);
+const CtlSwitch = mongoose.model('CtlSwitchSchema', dataSchema);
 
 
 // module.exports = User;

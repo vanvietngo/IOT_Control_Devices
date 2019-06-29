@@ -4,7 +4,7 @@ var io = socket_io();
 var socketio = {};
 socketio.io = io;
 
-const DataModule = require('../models/data-model');
+var DataModule = require('../models/data-model');
 // import modules
 
 // pass your parameters

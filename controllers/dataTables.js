@@ -10,7 +10,7 @@ module.exports={
     var element = {};
 
 
-    Data.find().then((data)=>{
+    Data.Data.find().then((data)=>{
         for (var i in data){
           arrTime.push(data[i].Time);
           arrTemp.push(data[i].Temperature);

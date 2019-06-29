@@ -10,10 +10,12 @@ const dataSchema = new Schema({
   Humidity: String
 });
 
-const Data = mongoose.model('Data', dataSchema);
-const Data22 = mongoose.model('Data22', dataSchema);
+var Data = mongoose.model('Data', dataSchema);
+// const Data22 = mongoose.model('Data22', dataSchema);
 
 
 // module.exports = User;
-module.exports.Data = Data;
-module.exports.Data22 = Data22;
+// module.exports = Data;
+module.exports = {
+  Data:Data
+};
