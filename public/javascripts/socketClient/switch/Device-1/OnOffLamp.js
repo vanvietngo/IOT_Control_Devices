@@ -19,7 +19,7 @@ var socket = io.connect('http://vanvietonline.herokuapp.com/');
         socket.emit("client-send-lamp1-off", "off");
         // save to Database
         socket.emit("client-send-save-to-DB-of-Device-1", {
-          user: $('#UserName').val(),
+          user: $('#txt-UserName').val(),
           status: "OFF"
         });
       }
