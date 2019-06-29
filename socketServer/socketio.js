@@ -4,7 +4,12 @@ var io = socket_io();
 var socketio = {};
 socketio.io = io;
 
-const Data = require('../models/data-model');
+const DataModule = require('../models/data-model');
+// import modules
+
+// pass your parameters
+
+
 
 // require function socket
 var DHT11 = require('./functionSocket/DHT11/DHT11');
@@ -13,11 +18,10 @@ var DeviceOnOff = require('./functionSocket/Lamp/OnOff/lamp');
 var TimerDevice = require('./functionSocket/Lamp/Timer/TimerLamp');
 
 var arr = [];
-
 //Khi có mệt kết nối được tạo giữa Socket Client và Socket Server
 io.on('connection', function (socket) { //'connection' (1) này khác gì với 'connection' (2)
 // DHT and save to Mongo Clound
-    DHT11.DHT(socket, io, arr, Data);
+    DHT11.DHT(socket, io, arr, DataModule.Data);
 
 
     //lang nghe check switch
