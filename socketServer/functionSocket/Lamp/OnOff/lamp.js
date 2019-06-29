@@ -13,7 +13,7 @@ module.exports = {
         });
 
         socket.on('client-send-save-to-DB-of-Device-1', function (data) {
-            console.log("Data on off sw : => " + data);
+            console.log("Data on off sw : => " + data.user + "<br>" + data.status);
 
         });
   },
