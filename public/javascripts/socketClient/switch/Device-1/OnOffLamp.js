@@ -14,7 +14,6 @@ var socket = io.connect('http://vanvietonline.herokuapp.com/');
           user: $('#txt-UserName').text(),
           status: "ON"
         });
-);
       } else{
         socket.emit("client-send-lamp1-off", "off");
         // save to Database
