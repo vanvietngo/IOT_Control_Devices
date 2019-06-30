@@ -16,14 +16,26 @@ module.exports = {
             var tempSS = dataModel.findOne().sort({
                 _id: -1
             })
-            console.log("TempSS = "+ tempSS);
-            dataModel.create({
-                // console.log("da create data")
-                Time: arr[0],
-                Temperature: arr[1],
-                Humidity: arr[2]
-            });
-            arr = [];
+            if(tempSS == null){
+              dataModel.create({
+                  // console.log("da create data")
+                  Time: arr[0],
+                  Temperature: arr[1],
+                  Humidity: arr[2]
+              });
+              arr = [];
+            }else{
+              if(tempSS.Temperature != arr[1] | tempSS.Humidity !=arr[2]){
+                dataModel.create({
+                    // console.log("da create data")
+                    Time: arr[0],
+                    Temperature: arr[1],
+                    Humidity: arr[2]
+                });
+                arr = [];
+              }
+            }
+
         });
     }
 };
