@@ -20,21 +20,22 @@ module.exports = {
             // add data to mongo by arr
             dataModel.findOne().sort({_id: -1}).exec(function(err, post) {
               if (post == null){
-                console.log("post = " + post);
+                console.log("post = (null) = " + post);
                 console.log("arr = " + arr);
                 dataModel.create({
+                  console.log("da create data")
                   Time: arr[0],
                   Temperature: arr[1],
                   Humidity:arr[2]
                 });
                 arr = [];
               }else {
-                console.log("post = " + post);
-                console.log("arr = " + arr);
+                console.log("post not = (null) " + post);
                 if( (post.Temperature != arr[1] )|(post.Humidity != arr[2] )){
-                  console.log("post = " + post);
-                  console.log("arr = " + arr);
+
                   dataModel.create({
+                    console.log("post = (null) = " + post);
+
                     Time: arr[0],
                     Temperature: arr[1],
                     Humidity:arr[2]
