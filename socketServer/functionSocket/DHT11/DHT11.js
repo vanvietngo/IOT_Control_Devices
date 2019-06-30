@@ -29,7 +29,7 @@ module.exports = {
                   arr = [];
                 }
                 else {
-                    if(results.Temperature != arr[1] | results.Humidity !=arr[2]){
+                    if(results[0].Temperature != arr[1] | results[0].Humidity !=arr[2]){
                       console.log(results[0].Temperature);
                       dataModel.create({
                           // console.log("da create data")
