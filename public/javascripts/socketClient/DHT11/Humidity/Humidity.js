@@ -7,8 +7,5 @@ socket.on("Humidity-client", function (data) {
     $(".da")
         .html(data.Humidity + " %");
     $(".timee")
-        .html("<br>"+new Date(now + " GMT-0700").toUTCString());
-        console.log("time = " + new Date(now + " GMT-0700").toUTCString());
-        console.log("time before = " + now);
-
+        .html("<br>"+new Date(now + " GMT-0000").toUTCString());
 });
