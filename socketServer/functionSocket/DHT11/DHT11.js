@@ -32,17 +32,23 @@ module.exports = {
                 else {
                   console.log(results[0].Temperature);
                   console.log("arr[1]" + arr[1]);
+                  dataModel.create({
+                      // console.log("da create data")
+                      Time: arr[0],
+                      Temperature: arr[1],
+                      Humidity: arr[2]
+                  });
 
-                    if(results[0].Temperature != arr[1] | results[0].Humidity !=arr[2]){
-                      console.log(results[0].Temperature);
-                      dataModel.create({
-                          // console.log("da create data")
-                          Time: arr[0],
-                          Temperature: arr[1],
-                          Humidity: arr[2]
-                      });
-                      arr = [];
-                    }
+                    // if(results[0].Temperature != arr[1] | results[0].Humidity !=arr[2]){
+                    //   console.log(results[0].Temperature);
+                    //   dataModel.create({
+                    //       // console.log("da create data")
+                    //       Time: arr[0],
+                    //       Temperature: arr[1],
+                    //       Humidity: arr[2]
+                    //   });
+                    //   arr = [];
+                    // }
                 }
             });
             // var tempSS = dataModel.findOne().sort({
