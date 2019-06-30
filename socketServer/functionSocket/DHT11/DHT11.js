@@ -18,9 +18,9 @@ module.exports = {
             arr.push(data.Humidity);
             dataModel.findOne().sort({_id: -1}).exec(function(err, post) {
               // if( (post.Temperature != arr[1] )|(post.Humidity != arr[2] )){
-console.log("post = " + post);
+              console.log("post = " + post);
                 // arr = [];
-              }
+
 
              });
             // add data to mongo by arr
