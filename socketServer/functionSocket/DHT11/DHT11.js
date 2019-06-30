@@ -3,7 +3,10 @@ module.exports = {
     DHT: (socket, io, arr, dataModel) => {
       //khi lắng nghe được lệnh "DHT-Temperature // DHT-Humidity" với một tham số, và chúng ta đặt tên tham số đó là data. Mình thích thì mình đặt thôi
       socket.on('DHT-Temperature', function (data) {
-          arr.push(Date());
+        var now = new Date();
+        var arr = [];
+
+          arr.push(new Date(now + " GMT-0700").toUTCString());
           arr.push(data.Temperature);
           io.sockets.emit("Temperature-client", data);
 
@@ -19,7 +22,6 @@ module.exports = {
               Temperature: arr[1],
               Humidity:arr[2]
             });
-            arr = [];
           });
     }
 };
