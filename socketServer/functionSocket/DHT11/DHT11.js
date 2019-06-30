@@ -13,75 +13,51 @@ module.exports = {
             io.sockets.emit("Humidity-client", data);
             arr.push(data.Humidity);
             // add data to mongo by arr
-            var query = [];
-            query = dataModel.find().sort({_id:-1}).limit(1);
-            query.exec(function(err, results) {
-                if (err) {
-                  console.log('err => ' + err);
-                }
-                else if (results.length == 0) {
-                  console.log('null === null');
-                  dataModel.create({
-                      // console.log("da create data")
-                      Time: arr[0],
-                      Temperature: arr[1],
-                      Humidity: arr[2]
-                  });
-                  arr = [];
-                }
-                else {
-                  console.log("rs.temp" + results[0].Temperature);
-                  console.log("arr[1]" + arr[1]);
-                  // dataModel.create({
-                  //     // console.log("da create data")
-                  //     Time: arr[0],
-                  //     Temperature: arr[1],
-                  //     Humidity: arr[2]
-                  // });
-                  //   arr = [];
+            var query = dataModel.find().sort({_id:-1}).limit(1);
 
-                    if(results[0].Temperature != arr[1] | results[0].Humidity !=arr[2]){
-                      console.log(results[0].Temperature);
-                      dataModel.create({
-                          // console.log("da create data")
-                          Time: arr[0],
-                          Temperature: arr[1],
-                          Humidity: arr[2]
-                      });
-                      arr = [];
-                    }
-                }
-            });
-            // var tempSS = dataModel.findOne().sort({
-            //     _id: -1
-            // })
-            // console.log('tempSS' + tempSS);
+            if(qery[0].Temperature != arr[1]){
+                    dataModel.create({
+                        // console.log("da create data")
+                        Time: arr[0],
+                        Temperature: arr[1],
+                        Humidity: arr[2]
+                    });
+                    arr = [];
+            }
+            // query = dataModel.find().sort({_id:-1}).limit(1);
+            // query.exec(function(err, results) {
+            //     if (err) {
+            //       console.log('err => ' + err);
+            //     }
+            //     else if (results.length == 0) {
+            //       console.log('null === null');
+            //       dataModel.create({
+            //           // console.log("da create data")
+            //           Time: arr[0],
+            //           Temperature: arr[1],
+            //           Humidity: arr[2]
+            //       });
+            //       arr = [];
+            //     }
+            //     else {
+            //       console.log("rs.temp" + results[0].Temperature);
+            //       console.log("arr[1]" + arr[1]);
             //
-            //
-            // console.log("dataModel.findOne().sort( _id: -1}) == " + dataModel.findOne().sort({  _id: -1  }));
-            //
-            // console.log('tempSS222' +   dataModel.find().limit(1).sort({_id:-1}));
-            //
-            // console.log('tempSS.Temperature = ' + tempSS.Temperature); // => notdefine
-            //
-            //
-            // if(tempSS == null){
-            //   console.log('tempSS = null')
-            //
-            // }else{
-            //   console.log('tempSS != null');
-            //   console.log('tempSS.Temperature = ' + tempSS.Temperature);
-            //
-            //   if(tempSS.Temperature != arr[1] | tempSS.Humidity !=arr[2]){
-            //     dataModel.create({
-            //         // console.log("da create data")
-            //         Time: arr[0],
-            //         Temperature: arr[1],
-            //         Humidity: arr[2]
-            //     });
-            //     arr = [];
-            //   }
-            // }
+            //         if(results[0].Temperature != arr[1] | results[0].Humidity !=arr[2]){
+            //           console.log(results[0].Temperature);
+            //           dataModel.create({
+            //               // console.log("da create data")
+            //               Time: arr[0],
+            //               Temperature: arr[1],
+            //               Humidity: arr[2]
+            //           });
+            //           arr = [];
+            //         }
+            //     }
+            // });
+
+
+
 
         });
     }
