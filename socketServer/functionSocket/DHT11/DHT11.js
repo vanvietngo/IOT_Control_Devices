@@ -17,6 +17,8 @@ module.exports = {
                 _id: -1
             })
             console.log('tempSS.Temperature = ' + tempSS.Temperature);
+            console.log('tempSS' + tempSS);
+
             if(tempSS == null){
               console.log('tempSS = null')
               dataModel.create({
@@ -28,6 +30,7 @@ module.exports = {
               arr = [];
             }else{
               console.log('tempSS != null');
+              console.log('tempSS.Temperature = ' + tempSS.Temperature);
 
               if(tempSS.Temperature != arr[1] | tempSS.Humidity !=arr[2]){
                 dataModel.create({
