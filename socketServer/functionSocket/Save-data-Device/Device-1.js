@@ -6,7 +6,7 @@ module.exports = {
       // var time = new Date(now + " GMT-0700").toUTCString();
 
       modelDevice1.create({
-        Time: new Date(now + " GMT-0700").toUTCString(),
+        Time: new Date(" GMT-0700").toUTCString(),
         DeviceName:"Device 1",
         User: data.user,
         Status: data.status,
