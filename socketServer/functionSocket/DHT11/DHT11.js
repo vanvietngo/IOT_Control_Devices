@@ -13,12 +13,15 @@ module.exports = {
             io.sockets.emit("Humidity-client", data);
             arr.push(data.Humidity);
             // add data to mongo by arr
+            dataModel.find().limit(1).sort({_id:-1});
+
             var tempSS = dataModel.findOne().sort({
                 _id: -1
             })
-            console.log('tempSS.Temperature = ' + tempSS.dataModel.Temperature);
+            // console.log('tempSS.Temperature = ' + tempSS.dataModel.Temperature);
             console.log('tempSS' + tempSS);
             console.log("dataModel.findOne().sort( _id: -1}) == " + dataModel.findOne().sort({  _id: -1  }));
+            console.log('tempSS222' +   dataModel.find().limit(1).sort({_id:-1}));
 
 
             if(tempSS == null){
