@@ -3,11 +3,10 @@ module.exports = {
       socket.on('client-send-save-to-DB-of-Device-1', function (data) {
       var infor = data;
       var now = new Date();
-      var time = new Date(now + " GMT-0700").toUTCString();
+      // var time = new Date(now + " GMT-0700").toUTCString();
 
-console.log("Date( ) = " +time);
       modelDevice1.create({
-        Time: Date(),
+        Time: new Date(now + " GMT-0700").toUTCString(),
         DeviceName:"Device 1",
         User: data.user,
         Status: data.status,
