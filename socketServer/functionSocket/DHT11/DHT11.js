@@ -14,8 +14,10 @@ module.exports = {
             arr.push(data.Humidity);
             // add data to mongo by arr
             var query = dataModel.find().sort({_id:-1}).limit(1);
-
+            console.log("not : " + query[0].Temperature);
             if(qery[0].Temperature != arr[1]){
+              console.log("pass : " + query[0].Temperature);
+
                     dataModel.create({
                         // console.log("da create data")
                         Time: arr[0],
