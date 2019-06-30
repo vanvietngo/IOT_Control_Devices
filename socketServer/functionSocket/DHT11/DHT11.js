@@ -31,6 +31,8 @@ module.exports = {
                 arr = [];
               }else {
                 console.log("post not = (null) " + post);
+                console.log("typedef post  =  " + typeof(post).Temperature);
+
                 if( (post.Temperature != arr[1] )|(post.Humidity != arr[2] )){
 
                   dataModel.create({
