@@ -2,7 +2,7 @@ module.exports = {
     SaveDevice1: (socket, io, modelDevice1) => {
       socket.on('client-send-save-to-DB-of-Device-1', function (data) {
       var infor = data;
-      Tweet.findOne().sort({_id: -1}).exec(function(err, post) {
+      modelDevice1.findOne().sort({_id: -1}).exec(function(err, post) {
         console.log("dada = " + post);
 
        });
