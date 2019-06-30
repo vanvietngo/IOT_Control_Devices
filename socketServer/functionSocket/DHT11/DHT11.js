@@ -31,19 +31,20 @@ module.exports = {
                 arr = [];
               }else {
                 console.log("post not = (null) " + post);
-                console.log("typedef post  =  " + typeof(post).Temperature);
+                console.log("typedef typeof(post).Temperature  =  " + typeof(post.Temperature));
+                console.log("typedef post.Humidity  =  " + typeof(post.Humidity));
 
                 if( (post.Temperature != arr[1] )|(post.Humidity != arr[2] )){
 
                   dataModel.create({
-                    // console.log("post = (null) = " + post);
-
                     Time: arr[0],
                     Temperature: arr[1],
                     Humidity:arr[2]
                   });
                   arr = [];
                 }
+
+
               }
 
              });
