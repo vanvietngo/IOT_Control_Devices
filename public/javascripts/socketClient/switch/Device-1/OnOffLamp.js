@@ -11,14 +11,14 @@ var socket = io.connect('http://vanvietonline.herokuapp.com/');
         socket.emit("client-send-lamp1-on", "on");
         // save to Database
         socket.emit("client-send-save-to-DB-of-Device-1", {
-          user: $('#txt-UserName').text(),
+          user: $('#UserName').text(),
           status: "ON"
         });
       } else{
         socket.emit("client-send-lamp1-off", "off");
         // save to Database
         socket.emit("client-send-save-to-DB-of-Device-1", {
-        user: $('#txt-UserName').text(),
+        user: $('#UserName').text(),
         status: "OFF"
         });
       }
