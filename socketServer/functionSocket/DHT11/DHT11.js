@@ -16,25 +16,35 @@ module.exports = {
         socket.on('DHT-Humidity', function (data) {
             io.sockets.emit("Humidity-client", data);
             arr.push(data.Humidity);
-            dataModel.findOne().sort({_id: -1}).exec(function(err, post) {
-              // if( (post.Temperature != arr[1] )|(post.Humidity != arr[2] )){
-              console.log("post = " + post);
-                // arr = [];
-
-
-             });
-            // add data to mongo by arr
             // dataModel.findOne().sort({_id: -1}).exec(function(err, post) {
-            //   if( (post.Temperature != arr[1] )|(post.Humidity != arr[2] )){
-            //     dataModel.create({
-            //       Time: arr[0],
-            //       Temperature: arr[1],
-            //       Humidity:arr[2]
-            //     });
-            //     arr = [];
-            //   }
+            //   // if( (post.Temperature != arr[1] )|(post.Humidity != arr[2] )){
+            //   console.log("post = " + post);
+            //     // arr = [];
+            //
             //
             //  });
+
+            // add data to mongo by arr
+            dataModel.findOne().sort({_id: -1}).exec(function(err, post) {
+              if (post == null){
+                dataModel.create({
+                  Time: arr[0],
+                  Temperature: arr[1],
+                  Humidity:arr[2]
+                });
+                arr = [];
+              }else {
+                if( (post.Temperature != arr[1] )|(post.Humidity != arr[2] )){
+                  dataModel.create({
+                    Time: arr[0],
+                    Temperature: arr[1],
+                    Humidity:arr[2]
+                  });
+                  arr = [];
+                }
+              }
+
+             });
 
           });
     }
