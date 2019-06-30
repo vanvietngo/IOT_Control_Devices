@@ -31,8 +31,12 @@ module.exports = {
                 arr = [];
               }else {
                 console.log("post not = (null) " + post);
+                console.log('post.Temperature = ' + post.Temperature)
                 console.log("typedef typeof(post).Temperature  =  " + typeof(post.Temperature));
+
+                console.log('post.Humidity = ' + post.Humidity)
                 console.log("typedef post.Humidity  =  " + typeof(post.Humidity));
+                
 console.log("arr[1] = "+ arr[1]);
 console.log("typeof arr[1] = "+ typeof(arr[1]));
 
