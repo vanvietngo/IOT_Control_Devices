@@ -18,11 +18,7 @@ module.exports = {
             })
             console.log('tempSS.Temperature = ' + tempSS.Temperature);
             console.log('tempSS' + tempSS);
-            console.log('dataModel.findOne().sort({
-                _id: -1
-            }) == ' + dataModel.findOne().sort({
-                _id: -1
-            }));
+            console.log("dataModel.findOne().sort( _id: -1}) == " + dataModel.findOne().sort({  _id: -1  }));
 
 
             if(tempSS == null){
