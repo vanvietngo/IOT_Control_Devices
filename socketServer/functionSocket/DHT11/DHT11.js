@@ -16,7 +16,9 @@ module.exports = {
             var tempSS = dataModel.findOne().sort({
                 _id: -1
             })
+            console.log('tempSS.Temperature = ' + tempSS.Temperature);
             if(tempSS == null){
+              console.log('tempSS = null')
               dataModel.create({
                   // console.log("da create data")
                   Time: arr[0],
@@ -25,6 +27,8 @@ module.exports = {
               });
               arr = [];
             }else{
+              console.log('tempSS != null');
+
               if(tempSS.Temperature != arr[1] | tempSS.Humidity !=arr[2]){
                 dataModel.create({
                     // console.log("da create data")
