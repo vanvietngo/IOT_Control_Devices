@@ -2,10 +2,7 @@ module.exports = {
     SaveDevice1: (socket, io, modelDevice1) => {
       socket.on('client-send-save-to-DB-of-Device-1', function (data) {
       var infor = data;
-      modelDevice1.findOne().sort({_id: -1}).exec(function(err, post) {
-        console.log("dada = " + post);
 
-       });
       // var time = new Date(now + " GMT-0700").toUTCString();
       var now = new Date();
       io.sockets.emit("Server-send-save-to-DB-of-Device-1");

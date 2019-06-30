@@ -18,12 +18,18 @@ module.exports = {
             arr.push(data.Humidity);
 
             // add data to mongo by arr
-            dataModel.create({
-              Time: arr[0],
-              Temperature: arr[1],
-              Humidity:arr[2]
-            });
-            arr = [];
+            dataModel.findOne().sort({_id: -1}).exec(function(err, post) {
+              if( (post.Temperature != arr[1] )|(post.Humidity != arr[2] )){
+                dataModel.create({
+                  Time: arr[0],
+                  Temperature: arr[1],
+                  Humidity:arr[2]
+                });
+                arr = [];
+              }
+
+             });
+
           });
     }
 };
