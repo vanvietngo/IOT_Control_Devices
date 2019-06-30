@@ -1,9 +1,12 @@
 module.exports = {
 
-    SaveDevice: (socket, io) => {
+    SaveDevice1: (socket, io) => {
       socket.on('client-send-save-to-DB-of-Device-1', function (data) {
-      console.log(data.user);
-      console.log(data.status);
+
+      var infor = data;
+      io.sockets.emit("Server-send-save-to-DB-of-Device-1", infor);
+      console.log(infor.user);
+      console.log(infor.status);
       });
     }
 };

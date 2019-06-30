@@ -41,7 +41,7 @@ io.on('connection', function (socket) { //'connection' (1) này khác gì với 
     TimerDevice.TimerDevice5(socket, io);
     TimerDevice.TimerDevice6(socket, io);
 
-SaveDevice.SaveDevice(socket, io);
+SaveDevice.SaveDevice1(socket, io);
 });
 
 
