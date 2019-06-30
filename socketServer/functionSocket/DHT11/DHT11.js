@@ -28,34 +28,36 @@ module.exports = {
                   Temperature: arr[1],
                   Humidity:arr[2]
                 });
-                arr = [];}
-//               }else {
-//                 console.log("post not = (null) " + post);
-//                 console.log('post.Temperature = ' + post.Temperature)
-//                 console.log("typedef typeof(post).Temperature  =  " + typeof(post.Temperature));
-//
-//                 console.log('post.Humidity = ' + post.Humidity)
-//                 console.log("typedef post.Humidity  =  " + typeof(post.Humidity));
-//
-// console.log("arr[1] = "+ arr[1]);
-// console.log("typeof arr[1] = "+ typeof(arr[1]));
-//
-// console.log("arr[2] = "+ arr[2]);
-//
-// console.log("typeof arr[2] = "+ typeof(arr[2]));
-//
-//                 if( (post.Temperature != arr[1] )|(post.Humidity != arr[2] )){
-//
-//                   dataModel.create({
-//                     Time: arr[0],
-//                     Temperature: arr[1],
-//                     Humidity:arr[2]
-//                   });
-//                   arr = [];
-//                 }
-//
-//
-//               }
+                arr = [];
+              }
+
+              if(post != null) {
+                console.log("post not = (null) " + post);
+                console.log('post.Temperature = ' + post.Temperature)
+                console.log("typedef typeof(post).Temperature  =  " + typeof(post.Temperature));
+
+                console.log('post.Humidity = ' + post.Humidity)
+                console.log("typedef post.Humidity  =  " + typeof(post.Humidity));
+
+console.log("arr[1] = "+ arr[1]);
+console.log("typeof arr[1] = "+ typeof(arr[1]));
+
+console.log("arr[2] = "+ arr[2]);
+
+console.log("typeof arr[2] = "+ typeof(arr[2]));
+
+                if( (post.Temperature != arr[1] )|(post.Humidity != arr[2] )){
+
+                  dataModel.create({
+                    Time: arr[0],
+                    Temperature: arr[1],
+                    Humidity:arr[2]
+                  });
+                  arr = [];
+                }
+
+
+              }
 
              });
 
