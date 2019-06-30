@@ -23,7 +23,7 @@ module.exports = {
                 console.log("post = (null) = " + post);
                 console.log("arr = " + arr);
                 dataModel.create({
-                  console.log("da create data")
+                  // console.log("da create data")
                   Time: arr[0],
                   Temperature: arr[1],
                   Humidity:arr[2]
@@ -34,7 +34,7 @@ module.exports = {
                 if( (post.Temperature != arr[1] )|(post.Humidity != arr[2] )){
 
                   dataModel.create({
-                    console.log("post = (null) = " + post);
+                    // console.log("post = (null) = " + post);
 
                     Time: arr[0],
                     Temperature: arr[1],
