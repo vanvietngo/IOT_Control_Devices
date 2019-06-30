@@ -38,6 +38,7 @@ module.exports = {
                       Temperature: arr[1],
                       Humidity: arr[2]
                   });
+                    arr = [];
 
                     // if(results[0].Temperature != arr[1] | results[0].Humidity !=arr[2]){
                     //   console.log(results[0].Temperature);
