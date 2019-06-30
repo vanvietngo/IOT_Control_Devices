@@ -13,7 +13,8 @@ module.exports = {
             io.sockets.emit("Humidity-client", data);
             arr.push(data.Humidity);
             // add data to mongo by arr
-            var query = dataModel.find().sort({_id:-1}).limit(1);
+            var query = [];
+            query = dataModel.find().sort({_id:-1}).limit(1);
             query.exec(function(err, results) {
                 if (err) {
                   console.log('err => ' + err);
