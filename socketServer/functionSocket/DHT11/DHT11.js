@@ -30,7 +30,7 @@ module.exports = {
                 }
                 else {
                     if(results.Temperature != arr[1] | results.Humidity !=arr[2]){
-                      console.log(results);
+                      console.log(results[0].Temperature);
                       dataModel.create({
                           // console.log("da create data")
                           Time: arr[0],
