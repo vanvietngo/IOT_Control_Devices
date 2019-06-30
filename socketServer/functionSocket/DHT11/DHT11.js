@@ -15,17 +15,17 @@ module.exports = {
             // add data to mongo by arr
             var query = dataModel.find().sort({_id:-1}).limit(1);
             console.log("not : " + dataModel.find().limit(-1).sort({id: -1})[0]);
-            if(qery[0].Temperature != arr[1]){
-              // console.log("pass : " + dataModel.find().sort({_id:-1}).limit(1)[0].Temperature);
-
-                    dataModel.create({
-                        // console.log("da create data")
-                        Time: arr[0],
-                        Temperature: arr[1],
-                        Humidity: arr[2]
-                    });
-                    arr = [];
-            }
+            // if(qery[0].Temperature != arr[1]){
+            //   // console.log("pass : " + dataModel.find().sort({_id:-1}).limit(1)[0].Temperature);
+            //
+            //         dataModel.create({
+            //             // console.log("da create data")
+            //             Time: arr[0],
+            //             Temperature: arr[1],
+            //             Humidity: arr[2]
+            //         });
+            //         arr = [];
+            // }
             // query = dataModel.find().sort({_id:-1}).limit(1);
             // query.exec(function(err, results) {
             //     if (err) {
