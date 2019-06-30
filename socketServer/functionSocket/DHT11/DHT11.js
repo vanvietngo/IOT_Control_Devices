@@ -13,40 +13,26 @@ module.exports = {
             io.sockets.emit("Humidity-client", data);
             arr.push(data.Humidity);
             // add data to mongo by arr
-            dataModel.find().limit(1).sort({_id:-1});
+            var query = dataModel.find()..sort({_id:-1}).limit(1);
+            query.exec(function(err, results) {
+                if (err) {
+                  console.log('err => ' + err);
+                }
+                else if (results.length == 0) {
+                  dataModel.create({
+                      // console.log("da create data")
+                      Time: arr[0],
+                      Temperature: arr[1],
+                      Humidity: arr[2]
+                  });
+                  arr = [];
+                }
+                else {
+                    console.log('results is : ' + results);
+                }
+            });
 
-            var tempSS = dataModel.findOne().sort({
-                _id: -1
-            })
-            console.log('tempSS.Temperature = ' + tempSS.data-dhts.Temperature);
-            console.log('tempSS' + tempSS);
-            console.log("dataModel.findOne().sort( _id: -1}) == " + dataModel.findOne().sort({  _id: -1  }));
-            console.log('tempSS222' +   dataModel.find().limit(1).sort({_id:-1}));
 
-
-            if(tempSS == null){
-              console.log('tempSS = null')
-              dataModel.create({
-                  // console.log("da create data")
-                  Time: arr[0],
-                  Temperature: arr[1],
-                  Humidity: arr[2]
-              });
-              arr = [];
-            }else{
-              console.log('tempSS != null');
-              console.log('tempSS.Temperature = ' + tempSS.Temperature);
-
-              if(tempSS.Temperature != arr[1] | tempSS.Humidity !=arr[2]){
-                dataModel.create({
-                    // console.log("da create data")
-                    Time: arr[0],
-                    Temperature: arr[1],
-                    Humidity: arr[2]
-                });
-                arr = [];
-              }
-            }
 
         });
     }
