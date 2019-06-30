@@ -5,6 +5,7 @@ var socketio = {};
 socketio.io = io;
 
 var DataModule = require('../models/data-model');
+var SaveDataDeviceModule = require('../models/Device-model/CtlSwitch-model');
 // import modules
 
 // pass your parameters
@@ -14,7 +15,6 @@ var DataModule = require('../models/data-model');
 // require function socket
 var DHT11 = require('./functionSocket/DHT11/DHT11');
 var SaveDevice = require('./functionSocket/Save-data-Device/Device-1');
-
 var DeviceOnOff = require('./functionSocket/Lamp/OnOff/lamp');
 var TimerDevice = require('./functionSocket/Lamp/Timer/TimerLamp');
 // var WarningTheif = require('');
@@ -41,7 +41,7 @@ io.on('connection', function (socket) { //'connection' (1) này khác gì với 
     TimerDevice.TimerDevice5(socket, io);
     TimerDevice.TimerDevice6(socket, io);
 
-SaveDevice.SaveDevice1(socket, io);
+SaveDevice.SaveDevice1(socket, io, SaveDataDeviceModule.Device1);
 });
 
 
