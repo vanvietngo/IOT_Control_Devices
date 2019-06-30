@@ -26,7 +26,7 @@ var SaveDevice6 = require('./functionSocket/Save-data-Device/Device-6');
 //Khi có mệt kết nối được tạo giữa Socket Client và Socket Server
 io.on('connection', function (socket) { //'connection' (1) này khác gì với 'connection' (2)
 // DHT and save to Mongo Clound
-    DHT11.DHT(socket, io, arr, DataModule.Data);
+    DHT11.DHT(socket, io, DataModule.Data);
 
 
     //lang nghe check switch

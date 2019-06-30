@@ -1,6 +1,6 @@
 module.exports = {
 
-    DHT: (socket, io, arr, dataModel) => {
+    DHT: (socket, io, dataModel) => {
       //khi lắng nghe được lệnh "DHT-Temperature // DHT-Humidity" với một tham số, và chúng ta đặt tên tham số đó là data. Mình thích thì mình đặt thôi
       socket.on('DHT-Temperature', function (data) {
         var now = new Date();
