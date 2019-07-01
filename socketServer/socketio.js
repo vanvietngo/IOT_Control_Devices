@@ -21,8 +21,11 @@ var SaveDevice4 = require('./functionSocket/Save-data-Device/Device-4');
 var SaveDevice5 = require('./functionSocket/Save-data-Device/Device-5');
 var SaveDevice6 = require('./functionSocket/Save-data-Device/Device-6');
 
+var ListUser = require('./functionSocket/Inform-User/index');
+
 // var WarningTheif = require('');
 var arr = [];
+var ArrUsers=[];
 //Khi có mệt kết nối được tạo giữa Socket Client và Socket Server
 io.on('connection', function (socket) { //'connection' (1) này khác gì với 'connection' (2)
 // DHT and save to Mongo Clound
@@ -45,6 +48,8 @@ io.on('connection', function (socket) { //'connection' (1) này khác gì với 
     TimerDevice.TimerDevice6(socket, io);
 
     SaveDevice1.SaveDevice1(socket, io, SaveDataDeviceModule.Device1);
+
+    ListUser.ListUser(socket, io, ArrUsers);
 });
 
 

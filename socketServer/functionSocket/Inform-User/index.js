@@ -1,6 +1,6 @@
 
 module.exports = {
-  Rainning: (socket, io, ArrUser)=>{
+  ListUser: (socket, io, ArrUser)=>{
         // Send news on the socket
         socket.on('Client-send-infor-User-Online', function (data) {
           ArrUser.push(data.user);
