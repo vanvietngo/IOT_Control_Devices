@@ -8,7 +8,7 @@
 
 module.exports = {
     DHT: (socket, io, dataModel, arr) => {
-        // var arr = [];
+        var arr = [];
         //khi lắng nghe được lệnh "DHT-Temperature // DHT-Humidity" với một tham số, và chúng ta đặt tên tham số đó là data. Mình thích thì mình đặt thôi
         socket.on('DHT-Temperature', function(data) {
             var now = new Date();
@@ -31,11 +31,12 @@ module.exports = {
                   });
                   arr = [];
                 }
-                console.log('not pass to create data => temp = ' + results.Temperature);
-                console.log('not pass to create data => arr1 = ' + arr[1]);
-                    if(results.Temperature != arr[1] | results.Humidity !=arr[2]){
-                      console.log('pass to create data => temp = ' + results[0].Temperature);
-                      console.log('pass to create data => arr1 = ' + arr[1]);
+                else {
+                  console.log('NOT pass = > temp = ' + results[0].Temperature);
+                  console.log('NOT pass = > arr[1] = ' + arr[1]);
+                    if(results[0].Temperature != arr[1] | results[0].Humidity !=arr[2]){
+                      console.log('pass = > temp = ' + results[0].Temperature);
+                      console.log('pass = > arr[1] = ' + arr[1]);
 
                       dataModel.create({
                           Time: arr[0],
@@ -44,9 +45,8 @@ module.exports = {
                       });
                       arr = [];
                     }
-
-                    arr = [];
-
+                }
+                arr = [];
             });
 
 
