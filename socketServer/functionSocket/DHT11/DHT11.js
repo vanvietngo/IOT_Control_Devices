@@ -31,9 +31,9 @@ module.exports = {
                   });
                   arr = [];
                 }
-                console.log('not pass to create data => temp = ' + results[0].Temperature);
+                console.log('not pass to create data => temp = ' + results.Temperature);
                 console.log('not pass to create data => arr1 = ' + arr[1]);
-                    if(results[0].Temperature != arr[1] | results[0].Humidity !=arr[2]){
+                    if(results.Temperature != arr[1] | results.Humidity !=arr[2]){
                       console.log('pass to create data => temp = ' + results[0].Temperature);
                       console.log('pass to create data => arr1 = ' + arr[1]);
 
@@ -44,8 +44,8 @@ module.exports = {
                       });
                       arr = [];
                     }
-                    arr = [];
 
+                    arr = [];
 
             });
 
