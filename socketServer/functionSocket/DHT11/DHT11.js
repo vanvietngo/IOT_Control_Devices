@@ -44,6 +44,8 @@ module.exports = {
                       });
                       arr = [];
                     }
+                    arr = [];
+
 
             });
 
