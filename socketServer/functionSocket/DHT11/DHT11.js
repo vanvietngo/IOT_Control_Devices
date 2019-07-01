@@ -23,10 +23,7 @@ module.exports = {
             // add data to mongo by arr
             var query = dataModel.find().limit(1).sort({_id:-1});
             query.exec(function(err, results) {
-                if (err) {
-                  console.log('err => ' + err);
-                }
-                else if (results[0].length == 0) {
+                if (results.length == 0) {
                   dataModel.create({
                       Time: arr[0],
                       Temperature: arr[1],
