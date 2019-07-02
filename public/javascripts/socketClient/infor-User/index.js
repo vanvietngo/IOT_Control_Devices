@@ -7,7 +7,7 @@ $(document).ready(function(){
   });
 })
   console.log('UserName.text = ' + $('#UserName').text());
-  console.log('avatarUser = ' + $('#UserName').text())$('.avatarUser').attr('src');
+  console.log('avatarUser = ' + $('.avatarUser').attr('src');
 
 
 
