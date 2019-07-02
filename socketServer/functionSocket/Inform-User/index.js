@@ -16,4 +16,5 @@ module.exports = {
           socket.broadcast.emit("Server-send-list-infor-User-Online",ArrUser);
 
   });
-};
+}
+}
