@@ -3,11 +3,11 @@ var socket = io.connect('http://vanvietonline.herokuapp.com/');
 $(document).ready(function(){
   socket.emit("Client-send-infor-User-Online",   {
     user: $('#UserName').text(),
-    avatar:$('.avatarUser').attr('src')
+    avatar: $('.avatarUser').attr('src')
   });
 })
   console.log('UserName.text = ' + $('#UserName').text());
-  console.log('avatarUser = ' + $('.avatarUser').attr('src');
+  // console.log('.avatarUser = ' + $('.avatarUser').attr('src');
 
 
 
