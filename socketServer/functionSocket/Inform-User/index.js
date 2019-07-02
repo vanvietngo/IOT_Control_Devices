@@ -10,11 +10,14 @@ module.exports = {
         });
 
         socket.on('disconnect', function () {
-          // ArrUser.splice(
-          //   ArrUser.indexOf(socket.AvatarUser), 1
-          // );
           console.log("user disconeect => " + socket.AvatarUser);
-          delete ArrUser[socket.AvatarUser];
+console.log('arr = ' + ArrUser);
+          ArrUser.splice(
+            ArrUser.indexOf(socket.AvatarUser), 1
+          );
+          // console.log("user disconeect => " + socket.AvatarUser);
+          console.log('arr after delete = ' + ArrUser);
+          // delete ArrUser[socket.AvatarUser];
           socket.broadcast.emit("Server-send-list-infor-User-Online",ArrUser);
 
   });
