@@ -1,5 +1,5 @@
 module.exports = {
-    SaveDevice1: (socket, io, modelDevice5) => {
+    SaveDevice5: (socket, io, modelDevice5) => {
       socket.on('client-send-save-to-DB-of-Device-5', function (data) {
       var infor = data;
       // var time = new Date(now + " GMT-0700").toUTCString();
