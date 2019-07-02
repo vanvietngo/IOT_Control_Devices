@@ -11,11 +11,7 @@ const dataSchemaDHT = new Schema({
 });
 
 var Data = mongoose.model('Data-DHT', dataSchemaDHT);
-// const Data22 = mongoose.model('Data22', dataSchema);
 
-
-// module.exports = User;
-// module.exports = Data;
 module.exports = {
   Data:Data
 };

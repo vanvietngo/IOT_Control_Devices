@@ -1,19 +1,19 @@
 module.exports = {
-    SaveDevice1: (socket, io, modelDevice1) => {
-      socket.on('client-send-save-to-DB-of-Device-1', function (data) {
+    SaveDevice1: (socket, io, modelDevice6) => {
+      socket.on('client-send-save-to-DB-of-Device-6', function (data) {
       var infor = data;
       // var time = new Date(now + " GMT-0700").toUTCString();
       var now = new Date();
 
 
-      io.sockets.emit("Server-send-save-to-DB-of-Device-1");
+      io.sockets.emit("Server-send-save-to-DB-of-Device-6");
       console.log(infor.user);
       console.log(infor.status);
-      socket.on('Esp-confirm-save-data-for-device-1', function () {
+      socket.on('Esp-confirm-save-data-for-device-6', function () {
         // create to database
-        modelDevice1.create({
+        modelDevice6.create({
           Time: new Date(now + " GMT-0700").toUTCString(),
-          DeviceName:"Device 1",
+          DeviceName:"Device 6",
           User: data.user,
           Status: data.status,
           // Timer:String

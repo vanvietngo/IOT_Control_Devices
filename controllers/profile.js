@@ -1,5 +1,5 @@
 // const User = require('../models/user-model');
-const Data = require('../models/data-model');
+const DataDHT = require('../models/DHT-model/index');
 
 module.exports={
   index: (req, res, next)=>{
@@ -10,7 +10,7 @@ module.exports={
     var element = {};
 
 
-    Data.Data.find().then((data)=>{
+    DataDHT.Data.find().then((data)=>{
         for (var i in data){
           arrTime.push(data[i].Time);
           arrTemp.push(data[i].Temperature);
