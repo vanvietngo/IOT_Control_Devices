@@ -5,9 +5,15 @@ module.exports = {
         socket.on('Client-send-infor-User-Online', function (data) {
           ArrUser.push(data.avatar);
           console.log('data.avater = ' + data.avatar);
-          // socket.Username = data.user;
+          socket.AvatarUser = data.avatar;
             io.sockets.emit("Server-send-list-infor-User-Online",ArrUser);
         });
+
+        socket.on('disconnect', function () {
+          ArrUser.splice(
+            ArrUser.indexOf(socket.AvatarUser), 1
+          );
+          socket.broadcast.emit("Server-send-list-infor-User-Online",ArrUser);
 
   }
 };
