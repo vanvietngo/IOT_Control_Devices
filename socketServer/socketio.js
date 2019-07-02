@@ -52,11 +52,11 @@ io.on('connection', function (socket) { //'connection' (1) này khác gì với 
 
 // Save history control switch to dâtbase
     SaveDevice1.SaveDevice1(socket, io, SaveDataDeviceModule.Device1);
-    SaveDevice1.SaveDevice2(socket, io, SaveDataDeviceModule.Device2);
-    SaveDevice1.SaveDevice3(socket, io, SaveDataDeviceModule.Device3);
-    SaveDevice1.SaveDevice4(socket, io, SaveDataDeviceModule.Device4);
-    SaveDevice1.SaveDevice5(socket, io, SaveDataDeviceModule.Device5);
-    SaveDevice1.SaveDevice6(socket, io, SaveDataDeviceModule.Device6);
+    SaveDevice2.SaveDevice2(socket, io, SaveDataDeviceModule.Device2);
+    SaveDevice3.SaveDevice3(socket, io, SaveDataDeviceModule.Device3);
+    SaveDevice4.SaveDevice4(socket, io, SaveDataDeviceModule.Device4);
+    SaveDevice5.SaveDevice5(socket, io, SaveDataDeviceModule.Device5);
+    SaveDevice6.SaveDevice6(socket, io, SaveDataDeviceModule.Device6);
 
 // Display User Online
     ListUser.ListUser(socket, io, ArrUsers);
