@@ -15,8 +15,8 @@ $(document).ready(function(){
     console.log('arr = ' + data);
     $(".ListUserOnline").html("");
     data.forEach(function(i){
-      // $(".ListUserOnline").append("<img src=" + i +" alt='Avatar' class='avatar dropdown-toggle'id='dropdownMenu2' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>");
-      $(".ListUserOnline").append("<p>" + i + "</b>");
+      $(".ListUserOnline").append("<img src=" + i +" alt='Avatar' class='avatar dropdown-toggle'id='dropdownMenu2' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>");
+      // $(".ListUserOnline").append("<p>" + i + "</b>");
 
     });
   });
