@@ -7,11 +7,12 @@ $(document).ready(function(){
   });
 })
   console.log('UserName.text = ' + $('#UserName').text());
-  // console.log('.avatarUser = ' + $('.avatarUser').attr('src');
+  console.log('.avatarUser = ' + $('.avatarUser').attr('src'));
 
 
 
   socket.on("Server-send-list-infor-User-Online", function (data) {
+    $(".ListUserOnline").html("");
     data.forEach(function(i){
       $(".ListUserOnline").append("<img src=" + i +" alt='Avatar' class='avatar dropdown-toggle'id='dropdownMenu2' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>");
     });
