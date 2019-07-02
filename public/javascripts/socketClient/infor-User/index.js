@@ -16,7 +16,7 @@ $(document).ready(function(){
     $(".ListUserOnline").html("");
     data.forEach(function(i){
       // $(".ListUserOnline").append("<img src=" + i +" alt='Avatar' class='avatar dropdown-toggle'id='dropdownMenu2' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>");
-      $(".ListUserOnline").append(i);
+      $(".ListUserOnline").append("<p>" + i + "</b>");
 
     });
   });

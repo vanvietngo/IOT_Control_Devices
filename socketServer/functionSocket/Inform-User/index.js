@@ -18,7 +18,7 @@ console.log('arr = ' + ArrUser);
           // console.log("user disconeect => " + socket.AvatarUser);
           console.log('arr after delete = ' + ArrUser);
           // delete ArrUser[socket.AvatarUser];
-          socket.broadcast.emit("Server-send-list-infor-User-Online",ArrUser);
+          io.sockets.emit("Server-send-list-infor-User-Online",ArrUser);
 
   });
 }
