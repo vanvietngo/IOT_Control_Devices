@@ -1,9 +1,9 @@
 socket.on('server-send-Thief', function () {
-  var myStopFunction = setInterval(function(){
-    $("#someElement").fadeOut(100).fadeIn(100);
+  var myStop_Function_Thief = setInterval(function(){
+    $(".class-Thief").fadeOut(100).fadeIn(100);
   }, 500);
 
-  $("#someElement").click(function(){
-    clearInterval(myStopFunction);
+  $(".class-Thief").click(function(){
+    clearInterval(myStop_Function_Thief);
   })
 });
