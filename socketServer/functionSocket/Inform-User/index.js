@@ -12,13 +12,16 @@ module.exports = {
         socket.on('disconnect', function () {
           console.log("user disconeect => " + socket.avatar);
 console.log('arr = ' + ArrUser);
-          ArrUser.splice(
-            ArrUser.indexOf(socket.avatar), 1
-          );
-          // console.log("user disconeect => " + socket.AvatarUser);
-          console.log('arr after delete = ' + ArrUser);
-          // delete ArrUser[socket.AvatarUser];
-          io.sockets.emit("Server-send-list-infor-User-Online",ArrUser);
+if(  socket.avatar != null){
+  ArrUser.splice(
+    ArrUser.indexOf(socket.avatar), 1
+  );
+  // console.log("user disconeect => " + socket.AvatarUser);
+  console.log('arr after delete = ' + ArrUser);
+  // delete ArrUser[socket.AvatarUser];
+  io.sockets.emit("Server-send-list-infor-User-Online",ArrUser);
+
+}
 
   });
 }
