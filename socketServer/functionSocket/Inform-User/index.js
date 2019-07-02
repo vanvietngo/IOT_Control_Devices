@@ -4,6 +4,7 @@ module.exports = {
         // Send news on the socket
         socket.on('Client-send-infor-User-Online', function (data) {
           ArrUser.push(data.avatar);
+          console.log('data.avater = ' + data.avatar);
           // socket.Username = data.user;
             io.sockets.emit("Server-send-list-infor-User-Online",ArrUser);
         });

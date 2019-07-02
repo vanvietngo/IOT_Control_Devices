@@ -5,6 +5,9 @@ $(document).ready(function(){
     user: $('#UserName').text(),
     avatar:$('.avatarUser').attr('src')
   }
+  console.log('UserName.text = ' + $('#UserName').text());
+  console.log('avatarUser = ' + $('#UserName').text())$('.avatarUser').attr('src');
+
 );
 
   socket.on("Server-send-list-infor-User-Online", function (data) {
