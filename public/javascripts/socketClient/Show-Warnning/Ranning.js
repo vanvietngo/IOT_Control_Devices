@@ -8,8 +8,6 @@ socket.on('server-send-rainning', function () {
     $(".class-Rainning").fadeOut(100).fadeIn(100);
     beepWarning.play();
 
-
-
     if(temp_Cancel > 20){
 // blink 11s  after recive signal for esp
       clearInterval(myStop_Function_Rainning);
