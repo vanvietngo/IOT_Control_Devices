@@ -9,7 +9,7 @@ const TheifSchema = new Schema({
   User_turn_off_Warnning:String
 });
 
-const Theif = mongoose.model('Data-Ranning', TheifSchema);
+const Theif = mongoose.model('Data-Theif', TheifSchema);
 
 // module.exports = User;
 module.exports = Theif;
