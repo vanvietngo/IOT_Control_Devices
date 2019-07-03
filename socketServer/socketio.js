@@ -12,7 +12,7 @@ var SaveDataDeviceModule = require('../models/Device-model/CtlSwitch-model');
 var DHT11 = require('./functionSocket/DHT11/DHT11');
 var DeviceOnOff = require('./functionSocket/Lamp/OnOff/lamp');
 var TimerDevice = require('./functionSocket/Lamp/Timer/TimerLamp');
-
+var WarningTheif = require('./functionSocket/Show-Warning/Thief');
 // Socket save history switch
 var SaveDevice1 = require('./functionSocket/Save-data-Device/Device-1');
 var SaveDevice2 = require('./functionSocket/Save-data-Device/Device-2');
@@ -60,6 +60,7 @@ io.on('connection', function (socket) { //'connection' (1) này khác gì với 
 
 // Display User Online
     ListUser.ListUser(socket, io, ArrUsers);
+    WarningTheif.Thief(socket, io);
 });
 
 
