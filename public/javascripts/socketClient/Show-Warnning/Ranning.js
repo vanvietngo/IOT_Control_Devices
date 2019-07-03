@@ -1,4 +1,5 @@
 socket.on('server-send-rainning', function () {
+  console.log('da nhan rainning');
   var temp_Cancel = 0;
   var myStop_Function_Rainning = setInterval(function(){
     temp_Cancel += 1;
