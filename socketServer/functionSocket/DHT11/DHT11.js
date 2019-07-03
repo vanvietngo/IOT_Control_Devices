@@ -32,12 +32,7 @@ module.exports = {
                   arr = [];
                 }
                 else {
-                  console.log('NOT pass = > temp = ' + results[0].Temperature);
-                  console.log('NOT pass = > arr[1] = ' + arr[1]);
                     if(results[0].Temperature != arr[1] | results[0].Humidity !=arr[2]){
-                      console.log('pass = > temp = ' + results[0].Temperature);
-                      console.log('pass = > arr[1] = ' + arr[1]);
-
                       dataModel.create({
                           Time: arr[0],
                           Temperature: arr[1],

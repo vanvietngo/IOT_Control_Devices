@@ -7,12 +7,17 @@ socketio.io = io;
 // require module
 var Data_DHT_Module = require('../models/DHT-model/index');
 var SaveDataDeviceModule = require('../models/Device-model/CtlSwitch-model');
+var SaveDataWarning_Rainning_Module = require('../models/Warnning-model/Rainning-model');
+var SaveDataWarning_Thief_Module = require('../models/Warnning-model/Thief-model');
+
 
 // require function socket
 var DHT11 = require('./functionSocket/DHT11/DHT11');
 var DeviceOnOff = require('./functionSocket/Lamp/OnOff/lamp');
 var TimerDevice = require('./functionSocket/Lamp/Timer/TimerLamp');
 var WarningTheif = require('./functionSocket/Show-Warning/Thief');
+var WarningRainning = require('./functionSocket/Show-Warning/Rainning');
+
 // Socket save history switch
 var SaveDevice1 = require('./functionSocket/Save-data-Device/Device-1');
 var SaveDevice2 = require('./functionSocket/Save-data-Device/Device-2');
@@ -50,7 +55,14 @@ io.on('connection', function (socket) { //'connection' (1) này khác gì với 
     TimerDevice.TimerDevice5(socket, io);
     TimerDevice.TimerDevice6(socket, io);
 
-// Save history control switch to dâtbase
+// Display User Online
+    ListUser.ListUser(socket, io, ArrUsers);
+
+// Listen Warnning and save to Database for Mongo-Clound
+    WarningTheif.Thief(socket, io, SaveDataWarning_Thief_Module);
+    WarningRainning.Rainning(socket, io, SaveDataWarning_Rainning_Module);
+
+// Save history control switch to database in Mongo-Clound
     SaveDevice1.SaveDevice1(socket, io, SaveDataDeviceModule.Device1);
     SaveDevice2.SaveDevice2(socket, io, SaveDataDeviceModule.Device2);
     SaveDevice3.SaveDevice3(socket, io, SaveDataDeviceModule.Device3);
@@ -58,9 +70,6 @@ io.on('connection', function (socket) { //'connection' (1) này khác gì với 
     SaveDevice5.SaveDevice5(socket, io, SaveDataDeviceModule.Device5);
     SaveDevice6.SaveDevice6(socket, io, SaveDataDeviceModule.Device6);
 
-// Display User Online
-    ListUser.ListUser(socket, io, ArrUsers);
-    WarningTheif.Thief(socket, io);
 });
 
 
