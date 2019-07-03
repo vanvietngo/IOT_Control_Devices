@@ -5,6 +5,10 @@ socket.on('server-send-rainning', function () {
   var myStop_Function_Rainning = setInterval(function(){
     temp_Cancel += 1;
     $(".class-Rainning").fadeOut(100).fadeIn(100);
+
+    var beepWarning = $("#beep-warning")[0];
+    beepWarning.play();
+
     if(temp_Cancel > 20){
 // blink 11s  after recive signal for esp
       clearInterval(myStop_Function_Rainning);
