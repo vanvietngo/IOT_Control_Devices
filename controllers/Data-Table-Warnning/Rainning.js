@@ -2,20 +2,12 @@ const Data_Rain = require('../../models/Warnning-model/Rainning-model');
 // const DataDHT = require('../../models/DHT-model/index');
 
 module.exports={
-  index: (req, res, next)=>{
+  index2: (req, res, next)=>{
     var arrTime2 = [];
     var arrStatus2 = [];
     // var arrUser_turn_off_Warnning = [];
 
     var element2 = {};
-
-
-    // DataDHT.Data.find().then((data)=>{
-    //     for (var i in data){
-    //       arrTime.push(data[i].Time);
-    //       arrTemp.push(data[i].Temperature);
-    //       arrHum.push(data[i].Humidity);
-    //     }
 
 
     Data_Rain.Ranning.find().then((data)=>{

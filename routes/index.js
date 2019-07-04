@@ -47,7 +47,7 @@ router.get('/login', function(req, res, next) {
 
 router.get('/dataTables',authCheck,dataTables_DHT.index);
 
-router.get('/dataTables-Warnning-Rain',authCheck,dataTables_Rain.index);
+router.get('/dataTables-Warnning-Rain',authCheck,dataTables_Rain.index2);
 
 // router.get('/dataTables-Warnning-Thief',authCheck,dataTables_Thief.index);
 
