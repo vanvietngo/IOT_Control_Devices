@@ -59,8 +59,8 @@ io.on('connection', function (socket) { //'connection' (1) này khác gì với 
     ListUser.ListUser(socket, io, ArrUsers);
 
 // Listen Warnning and save to Database for Mongo-Clound
-    WarningTheif.Thief(socket, io, SaveDataWarning_Thief_Module);
-    WarningRainning.Rainning(socket, io, SaveDataWarning_Rainning_Module);
+    WarningTheif.Thief(socket, io, SaveDataWarning_Thief_Module.Thief);
+    WarningRainning.Rainning(socket, io, SaveDataWarning_Rainning_Module.Ranning);
 
 // Save history control switch to database in Mongo-Clound
     SaveDevice1.SaveDevice1(socket, io, SaveDataDeviceModule.Device1);
