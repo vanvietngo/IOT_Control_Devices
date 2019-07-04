@@ -9,12 +9,20 @@ module.exports={
     var element = {};
 
 
-    Data_Rain.Ranning.find().then((data)=>{
+    DataDHT.Data.find().then((data)=>{
         for (var i in data){
           arrTime.push(data[i].Time);
-          arrStatus.push(data[i].Status);
-          // arrUser_turn_off_Warnning.push(data[i].User_turn_off_Warnning);
+          arrTemp.push(data[i].Temperature);
+          arrHum.push(data[i].Humidity);
         }
+
+
+    // Data_Rain.Ranning.find().then((data)=>{
+    //     for (var i in data){
+    //       arrTime.push(data[i].Time);
+    //       arrStatus.push(data[i].Status);
+    //       // arrUser_turn_off_Warnning.push(data[i].User_turn_off_Warnning);
+    //     }
 
     element = {
       user:req.user,
