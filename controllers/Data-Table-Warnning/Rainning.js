@@ -7,7 +7,7 @@ module.exports={
     var arrStatus2 = [];
     // var arrUser_turn_off_Warnning = [];
 
-    var element = {};
+    var element2 = {};
 
 
     // DataDHT.Data.find().then((data)=>{
