@@ -24,7 +24,7 @@ module.exports={
       Humidity:arrHum
     }
         // res.status(200).send(element);
-        res.render('pages/dataTable/tables', {Data:element});
+        res.render('pages/dataTable/DHT/tables-Dht', {Data:element});
 
 
       })

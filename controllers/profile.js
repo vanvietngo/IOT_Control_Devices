@@ -10,18 +10,18 @@ module.exports={
     var element = {};
 
 
-    DataDHT.Data.find().then((data)=>{
-        for (var i in data){
-          arrTime.push(data[i].Time);
-          arrTemp.push(data[i].Temperature);
-          arrHum.push(data[i].Humidity);
-        }
+    // DataDHT.Data.find().then((data)=>{
+    //     for (var i in data){
+    //       arrTime.push(data[i].Time);
+    //       arrTemp.push(data[i].Temperature);
+    //       arrHum.push(data[i].Humidity);
+    //     }
 
     element = {
-      user:req.user,
-      Time:arrTime,
-      Temperature:arrTemp,
-      Humidity:arrHum
+      user:req.user
+      // Time:arrTime,
+      // Temperature:arrTemp,
+      // Humidity:arrHum
     }
 
         // res.status(200).send(element);
