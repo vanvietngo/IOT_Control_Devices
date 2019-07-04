@@ -4,6 +4,11 @@ const passport = require('passport');
 
 const dataController = require('../controllers/profile');
 const dataTables_DHT = require('../controllers/dataTables-DHT');
+const dataTables_Rain = require('../controllers/Data-Table-Warnning/Rainning');
+const dataTables_Thief = require('../controllers/Data-Table-Warnning/Thief');
+// const dataTables_Device_1 = require('../controllers/dataTables-DHT');
+// const dataTables_Device_2 = require('../controllers/dataTables-DHT');
+
 
 const authCheck = (req, res, next)=>{
   if(!req.user){
@@ -41,6 +46,10 @@ router.get('/login', function(req, res, next) {
 });
 
 router.get('/dataTables',authCheck,dataTables_DHT.index);
+
+router.get('/dataTables-Warnning-Rain',authCheck,dataTables_Rain.index);
+
+router.get('/dataTables-Warnning-Thief',authCheck,dataTables_Thief.index);
 
 // auth loguot
 router.get('/logout', function(req, res, next) {
