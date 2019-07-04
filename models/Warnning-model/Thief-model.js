@@ -12,5 +12,5 @@ const TheifSchema = new Schema({
 const Theif = mongoose.model('Data-Theif', TheifSchema);
 
 module.exports = {
-  Thief:Thief
+  Thief:Theif
 };
