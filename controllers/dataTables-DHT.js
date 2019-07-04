@@ -1,4 +1,3 @@
-// const User = require('../models/user-model');
 const DataDHT = require('../models/DHT-model/index');
 
 module.exports={
@@ -24,7 +23,7 @@ module.exports={
       Humidity:arrHum
     }
         // res.status(200).send(element);
-        res.render('pages/dataTable/DHT/tables-Dht', {Data:element});
+        res.render('pages/dataTable/DHT/tables-DHT', {Data:element});
 
 
       })
