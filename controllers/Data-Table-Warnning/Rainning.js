@@ -1,33 +1,34 @@
 const Data_Rain = require('../../models/Warnning-model/Rainning-model');
+// const DataDHT = require('../../models/DHT-model/index');
 
 module.exports={
   index: (req, res, next)=>{
-    var arrTime = [];
-    var arrStatus = [];
-    var arrUser_turn_off_Warnning = [];
+    var arrTime2 = [];
+    var arrStatus2 = [];
+    // var arrUser_turn_off_Warnning = [];
 
     var element = {};
 
 
-    DataDHT.Data.find().then((data)=>{
-        for (var i in data){
-          arrTime.push(data[i].Time);
-          arrTemp.push(data[i].Temperature);
-          arrHum.push(data[i].Humidity);
-        }
-
-
-    // Data_Rain.Ranning.find().then((data)=>{
+    // DataDHT.Data.find().then((data)=>{
     //     for (var i in data){
     //       arrTime.push(data[i].Time);
-    //       arrStatus.push(data[i].Status);
-    //       // arrUser_turn_off_Warnning.push(data[i].User_turn_off_Warnning);
+    //       arrTemp.push(data[i].Temperature);
+    //       arrHum.push(data[i].Humidity);
     //     }
+
+
+    Data_Rain.Ranning.find().then((data)=>{
+        for (var i in data){
+          arrTime2.push(data[i].Time);
+          arrStatus2.push(data[i].Status);
+          // arrUser_turn_off_Warnning.push(data[i].User_turn_off_Warnning);
+        }
 
     element = {
       user:req.user,
-      Time:arrTime,
-      Status:arrStatus
+      Time:arrTime2,
+      Status:arrStatus2
       // User_turn_off_Warnning:arrUser_turn_off_Warnning
     }
         // res.status(200).send(element);
