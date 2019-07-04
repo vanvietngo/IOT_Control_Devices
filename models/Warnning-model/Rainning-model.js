@@ -11,7 +11,6 @@ User_turn_off_Warnning:String
 
 const Ranning = mongoose.model('Data-Ranning', RanningSchema);
 
-// module.exports = User;
 module.exports = {
   Ranning:Ranning
 };
