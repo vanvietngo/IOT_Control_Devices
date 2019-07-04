@@ -6,7 +6,7 @@ module.exports = {
           var now = new Date();
           dataModel.create({
             Time: new Date(now + " GMT-0700").toUTCString(),
-            Status:'ON'
+            Status:'ON ( Rainning )'
           });
             io.sockets.emit("server-send-rainning");
         });

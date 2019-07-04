@@ -49,7 +49,7 @@ router.get('/dataTables',authCheck,dataTables_DHT.index);
 
 router.get('/dataTables-Warnning-Rain',authCheck,dataTables_Rain.index);
 
-// router.get('/dataTables-Warnning-Thief',authCheck,dataTables_Thief.index);
+router.get('/dataTables-Warnning-Thief',authCheck,dataTables_Thief.index);
 
 // auth loguot
 router.get('/logout', function(req, res, next) {
