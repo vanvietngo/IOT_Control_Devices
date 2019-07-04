@@ -28,6 +28,6 @@ module.exports={
         res.render('pages/Show-Systerm-Ctl/index', {Data:element});
 
 
-      })
+      // })
   }
 }
