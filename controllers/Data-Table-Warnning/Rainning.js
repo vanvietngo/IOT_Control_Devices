@@ -25,14 +25,14 @@ module.exports={
           // arrUser_turn_off_Warnning.push(data[i].User_turn_off_Warnning);
         }
 
-    element = {
+    element2 = {
       user:req.user,
       Time:arrTime2,
       Status:arrStatus2
       // User_turn_off_Warnning:arrUser_turn_off_Warnning
     }
         // res.status(200).send(element);
-        res.render('pages/dataTable/Warnning/Raining', {Data:element});
+        res.render('pages/dataTable/Warnning/Raining', {Data:element2});
 
 
       })
