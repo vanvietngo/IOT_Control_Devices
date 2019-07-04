@@ -3,7 +3,7 @@ var router = express.Router();
 const passport = require('passport');
 
 const dataController = require('../controllers/profile');
-const dataTablesController = require('../controllers/dataTables');
+const dataTables_DHT = require('../controllers/dataTables-DHT');
 
 const authCheck = (req, res, next)=>{
   if(!req.user){
@@ -40,7 +40,7 @@ router.get('/login', function(req, res, next) {
   res.render('pages/login/login');
 });
 
-router.get('/dataTables',authCheck,dataTablesController.index);
+router.get('/dataTables',authCheck,dataTables_DHT.index);
 
 // auth loguot
 router.get('/logout', function(req, res, next) {
