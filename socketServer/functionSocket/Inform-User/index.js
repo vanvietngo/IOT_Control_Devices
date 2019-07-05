@@ -7,7 +7,7 @@ module.exports = {
             arrUser.push(data.user);
 
             socket.avatar = data.avatar;
-            socket.user = data.user;
+            socket.userr = data.userr;
             io.sockets.emit("Server-send-list-infor-User-Online", {
               ArrUser:ArrUser,
               arrUser:arrUser
@@ -17,12 +17,6 @@ module.exports = {
             console.log('arr = ' + ArrUser);
             if(socket.avatar != null) {
                 ArrUser.splice(ArrUser.indexOf(socket.avatar), 1);
-                socket.broadcast.emit("Server-send-list-infor-User-Online", {
-                  ArrUser:ArrUser,
-                  arrUser:arrUser
-                });
-            }
-            if(socket.user != null) {
                 arrUser.splice(arrUser.indexOf(socket.user), 1);
                 socket.broadcast.emit("Server-send-list-infor-User-Online", {
                   ArrUser:ArrUser,
