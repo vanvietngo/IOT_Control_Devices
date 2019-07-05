@@ -5,7 +5,7 @@ module.exports = {
         socket.on('Client-send-infor-User-Online', function(data) {
             ArrUser.push(data.avatar);
             arrUser.push(data.user);
-
+console.log('arruser = ' + arrUser);
             socket.avatar = data.avatar;
             socket.userr = data.userr;
             io.sockets.emit("Server-send-list-infor-User-Online", {
@@ -22,6 +22,7 @@ module.exports = {
                   ArrUser:ArrUser,
                   arrUser:arrUser
                 });
+            console.log('arr dis = ' + arrUser)    
             }
         });
     }
