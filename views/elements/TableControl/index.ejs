@@ -58,17 +58,28 @@
     .slider.round:before {
         border-radius: 50%;
     }
+.class-DHT{
+  /* background-color:#E9967A	; */
+  padding-top:10px;
+}
 
+.class-ctl{
+  padding-top:10px;
+  /* background-color:#E9967A	; */
+
+}
 </style>
 <!-- Breadcrumbs-->
-<ol class="breadcrumb"style="background-color:black">
-    <li style="color:red"> List User online </li>
-    <div class="ListUserOnline">
-
+<ol class="breadcrumb"style="background-color:#FFFFE0		">
+    <li style="color:#32CD32">
+      <i class="fa fa-user" aria-hidden="true"></i>
+<span>User online</span>
+        </li>
+    <div class="ListUserOnline dropdown ava">
  </div>
 </ol>
 <!-- Icon Cards-->
-<div class="row">
+<div class="row class-DHT">
     <!-- bang 1 -->
     <!-- Temperature -->
     <% include ./LibFunction/DHT/Temperature %>
@@ -79,12 +90,11 @@
             <!-- tIME -->
             <% include ./LibFunction/DHT/Time %>
                 <!-- bang 4 -->
-                <!-- Theif -->
-                <% include ./LibFunction/InformOther/Theif %>
+
 
 </div>
 <!-- Hang 2 -->
-<div class="row">
+<div class="row class-ctl">
     <!-- bang 1 -->
     <!-- Lamp - 1 -->
     <% include ./LibFunction/Device/Device-1 %>
@@ -100,7 +110,7 @@
 
 </div>
 <!-- Hang 3 -->
-<div class="row">
+<div class="row class-ctl">
     <!-- bang 1 -->
     <!-- Lamp - 1 -->
     <% include ./LibFunction/Device/Device-4 %>
@@ -111,7 +121,7 @@
             <!-- Lamp 3 -->
             <% include ./LibFunction/Device/Device-6 %>
                 <!-- bang 4 -->
-                <!-- Lamp 4 -->
-                <% include ./LibFunction/InformOther/Note %>
+                <!-- Theif -->
+                <% include ./LibFunction/InformOther/Theif %>
 
 </div>
