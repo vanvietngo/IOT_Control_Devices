@@ -5,7 +5,7 @@ module.exports = {
             ArrUser.push(data.avatar);
             arrName.push(data.user);
 
-console.log('arrName = ' + arrName);
+// console.log('arrName = ' + arrName);
 
             socket.avatar = data.avatar;
             socket.user = data.user;
@@ -15,7 +15,7 @@ console.log('arrName = ' + arrName);
             });
         });
         socket.on('disconnect', function() {
-            console.log('arr before dis nu,ber = ' + arrName.length + " === >> " + ArrUser.length;
+            // console.log('arr before dis number = ' + arrName.length + " === >> " + ArrUser.length;
             if(socket.avatar != null) {
                 ArrUser.splice(ArrUser.indexOf(socket.avatar), 1);
                 arrName.splice(arrName.indexOf(socket.user), 1);
