@@ -33,6 +33,7 @@ var ListUser = require('./functionSocket/Inform-User/index');
 // var WarningTheif = require('');
 var arr = [];
 var ArrUsers=[];
+var arrName = [];
 //Khi có mệt kết nối được tạo giữa Socket Client và Socket Server
 io.on('connection', function (socket) { //'connection' (1) này khác gì với 'connection' (2)
 
@@ -56,7 +57,7 @@ io.on('connection', function (socket) { //'connection' (1) này khác gì với 
     TimerDevice.TimerDevice6(socket, io);
 
 // Display User Online
-    ListUser.ListUser(socket, io, ArrUsers);
+    ListUser.ListUser(socket, io, ArrUsers, arrName);
 
 // Listen Warnning and save to Database for Mongo-Clound
     WarningTheif.Thief(socket, io, SaveDataWarning_Thief_Module.Thief);
