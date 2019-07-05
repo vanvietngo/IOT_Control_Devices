@@ -15,7 +15,7 @@ console.log('arrName = ' + arrName);
             });
         });
         socket.on('disconnect', function() {
-            console.log('arr before dis nu,ber = ' + arrName.length + " === >> " + ArrUser.length);
+            console.log('arr before dis nu,ber = ' + arrName.length() + " === >> " + ArrUser.length());
             if(socket.avatar != null) {
                 ArrUser.splice(ArrUser.indexOf(socket.avatar), 1);
                 arrName.splice(arrName.indexOf(socket.user), 1);
@@ -23,7 +23,6 @@ console.log('arrName = ' + arrName);
                   ArrUser:ArrUser,
                   arrName:arrName
                 });
-            // console.log('arr dis = ' + arrName)
             }
         });
     }
