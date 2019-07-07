@@ -9,7 +9,7 @@ module.exports = {
             Status:'ON'
           });
             io.sockets.emit("server-send-Thief");
-            Send_Mail();
+            Send_Mail;
         });
   }
 
