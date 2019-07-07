@@ -1,6 +1,7 @@
 module.exports = {
 // On chuc nang kem an toan tren mail
 // https://myaccount.google.com/lesssecureapps?pli=1
+// npm install nodemailer
 
 
     FunctionSendEmail: () => {
