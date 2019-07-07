@@ -1,6 +1,6 @@
 
 module.exports = {
-  Thief: (socket, io, dataModel)=>{
+  Thief: (socket, io, dataModel, Send_Mail)=>{
         // Send news on the socket
         socket.on('client-ESP-send-Thief', function (data) {
           var now = new Date();
@@ -9,6 +9,7 @@ module.exports = {
             Status:'ON'
           });
             io.sockets.emit("server-send-Thief");
+            Send_Mail();
         });
   }
 
