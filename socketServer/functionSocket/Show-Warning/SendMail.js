@@ -24,7 +24,7 @@ module.exports = {
               console.log('Kết nối thành công!');
               var mail = {
                   from: 'viet.ngovanviet@gmail.com', // Địa chỉ email của người gửi
-                  to: 'ngohuudang.dang@gmail.co, nghia1997cont@gmail.com', // Địa chỉ email của người gửi
+                  to: 'ngohuudang.dang@gmail.com, nghia1997cont@gmail.com', // Địa chỉ email của người gửi
                   subject: 'Cảnh báo trộm', // Tiêu đề mail
                   text: 'Cảnh Báo có người vào nhà !!!', // Nội dung mail dạng text
               };
