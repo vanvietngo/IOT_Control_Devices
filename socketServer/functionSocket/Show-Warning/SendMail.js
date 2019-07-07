@@ -25,7 +25,7 @@ module.exports = {
               var mail = {
                   from: 'viet.ngovanviet@gmail.com', // Địa chỉ email của người gửi
                   to: 'ngohuudang.dang@gmail.co, nghia1997cont@gmail.com', // Địa chỉ email của người gửi
-                  subject: 'Thư được gửi bằng Node.js', // Tiêu đề mail
+                  subject: 'Cảnh báo trộm', // Tiêu đề mail
                   text: 'Cảnh Báo có người vào nhà !!!', // Nội dung mail dạng text
               };
               //Tiến hành gửi email
