@@ -19,7 +19,7 @@ module.exports = {
       transporter.verify(function(error, success) {
           // Nếu có lỗi.
           if (error) {
-              console.log(error);
+              console.log('erro email = ' + error);
           } else { //Nếu thành công.
               console.log('Kết nối thành công!');
               var mail = {
