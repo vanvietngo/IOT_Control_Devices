@@ -1,6 +1,9 @@
 module.exports = {
 // On chuc nang kem an toan tren mail
 // https://myaccount.google.com/lesssecureapps?pli=1
+
+// unlock cap cha
+// https://accounts.google.com/b/0/DisplayUnlockCaptcha
 // npm install nodemailer
 
 
